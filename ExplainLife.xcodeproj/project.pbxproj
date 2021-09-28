@@ -14,6 +14,9 @@
 		57ED53D4270357C8001C2622 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57ED53D3270357C8001C2622 /* GoogleService-Info.plist */; };
 		57ED53D927035E46001C2622 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 57ED53D827035E46001C2622 /* .gitignore */; };
 		57ED53DB27036AE0001C2622 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57ED53DA27036AE0001C2622 /* LaunchScreen.storyboard */; };
+		57ED53E027037141001C2622 /* Aeonik-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57ED53DD27037141001C2622 /* Aeonik-Regular.otf */; };
+		57ED53E127037141001C2622 /* Aeonik-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57ED53DE27037141001C2622 /* Aeonik-Light.otf */; };
+		57ED53E227037141001C2622 /* Aeonik-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57ED53DF27037141001C2622 /* Aeonik-Bold.otf */; };
 		97F6E66EB4C96DA292C62429 /* Pods_ExplainLife.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3A3343DB1657E397B3ED8B /* Pods_ExplainLife.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +31,10 @@
 		57ED53D3270357C8001C2622 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		57ED53D827035E46001C2622 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		57ED53DA27036AE0001C2622 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		57ED53DD27037141001C2622 /* Aeonik-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aeonik-Regular.otf"; sourceTree = "<group>"; };
+		57ED53DE27037141001C2622 /* Aeonik-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aeonik-Light.otf"; sourceTree = "<group>"; };
+		57ED53DF27037141001C2622 /* Aeonik-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aeonik-Bold.otf"; sourceTree = "<group>"; };
+		57ED53E3270372DB001C2622 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A1380F4F71226FE8ED9B78AF /* Pods-ExplainLife.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExplainLife.release.xcconfig"; path = "Target Support Files/Pods-ExplainLife/Pods-ExplainLife.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +89,8 @@
 		57ED53C42703182B001C2622 /* ExplainLife */ = {
 			isa = PBXGroup;
 			children = (
+				57ED53DC270370E8001C2622 /* Fonts */,
+				57ED53E3270372DB001C2622 /* Info.plist */,
 				57ED53D3270357C8001C2622 /* GoogleService-Info.plist */,
 				57ED53C52703182B001C2622 /* ExplainLifeApp.swift */,
 				57ED53C72703182B001C2622 /* ContentView.swift */,
@@ -106,6 +115,16 @@
 				57ED53D827035E46001C2622 /* .gitignore */,
 			);
 			path = Git;
+			sourceTree = "<group>";
+		};
+		57ED53DC270370E8001C2622 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				57ED53DF27037141001C2622 /* Aeonik-Bold.otf */,
+				57ED53DE27037141001C2622 /* Aeonik-Light.otf */,
+				57ED53DD27037141001C2622 /* Aeonik-Regular.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,8 +188,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				57ED53D927035E46001C2622 /* .gitignore in Resources */,
+				57ED53E027037141001C2622 /* Aeonik-Regular.otf in Resources */,
 				57ED53CD2703182D001C2622 /* Preview Assets.xcassets in Resources */,
+				57ED53E227037141001C2622 /* Aeonik-Bold.otf in Resources */,
 				57ED53CA2703182D001C2622 /* Assets.xcassets in Resources */,
+				57ED53E127037141001C2622 /* Aeonik-Light.otf in Resources */,
 				57ED53DB27036AE0001C2622 /* LaunchScreen.storyboard in Resources */,
 				57ED53D4270357C8001C2622 /* GoogleService-Info.plist in Resources */,
 			);
@@ -355,14 +377,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ExplainLife/Preview Content\"";
+				DEVELOPMENT_TEAM = NY29KDUYP3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ExplainLife/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -373,6 +399,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.openwindow.ExplainLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -385,14 +412,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ExplainLife/Preview Content\"";
+				DEVELOPMENT_TEAM = NY29KDUYP3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ExplainLife/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -403,6 +434,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.openwindow.ExplainLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
