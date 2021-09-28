@@ -9,16 +9,107 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State var currentPage = 3
+    @AppStorage("currentScreen") var currentScreen = 0
+    
+    var body: some View {
+        if currentScreen > 3 {
+            SignIn()
+        } else {
+            OnboardingScreen()
+        }
+    }
+}
+
+//Onboarding Item View
+struct ItemView: View {
+    
+    //Instance of item
+    var item: Item
+    
+    var body: some View {
+        ZStack {
+            //Background Colour
+            Color("White")
+                .ignoresSafeArea()
+            
+            //VStack for all onboarding content
+            VStack {
+                //Onboarding Image
+                Image(item.image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .ignoresSafeArea()
+                
+                VStack {
+                    //Onboarding Title Text
+                    if (item.titleStart == "Speak ") {
+                        Text(item.titleStart)
+                            .font(Font.custom("Aeonik-Bold", size: 28))
+                            .foregroundColor(Color("Pastel Green"))
+                        + Text(item.titleEnd)
+                            .font(Font.custom("Aeonik-Bold", size: 28))
+                            .foregroundColor(Color("Navy Blue"))
+                    } else if (item.titleStart == "Understand ") {
+                        Text(item.titleStart)
+                            .font(Font.custom("Aeonik-Bold", size: 28))
+                            .foregroundColor(Color("Pastel Purple"))
+                        + Text(item.titleEnd)
+                            .font(Font.custom("Aeonik-Bold", size: 28))
+                            .foregroundColor(Color("Navy Blue"))
+                    } else {
+                        Text(item.titleStart)
+                            .font(Font.custom("Aeonik-Bold", size: 28))
+                            .foregroundColor(Color("Pastel Orange"))
+                        + Text(item.titleEnd)
+                            .font(Font.custom("Aeonik-Bold", size: 28))
+                            .foregroundColor(Color("Navy Blue"))
+                    }
+                    
+                    //Onboarding Detail Text
+                    Text(item.detail)
+                        .font(Font.custom("Aeonik-Regular", size: 18))
+                        .foregroundColor(Color("Navy Blue"))
+                        .lineSpacing(5)
+                        .padding(.top, 10)
+                    
+                }
+                .frame(width: 320, height: 180, alignment: .topLeading)
+                
+                Spacer()
+            }
+        }
+    }
+}
+
+//Login View
+struct SignIn: View {
+    var body: some View {
+        Text("Sign In Screen")
+    }
+}
+
+//Onboarding Screen
+struct OnboardingScreen: View {
+    
     //Get screen width
     var screenWidth = UIScreen.main.bounds.width
+    
     //xOffset variable
     @State var xOffset: CGFloat = 0
+    
     //Var to hold currentPage
     @State var currentPage = 0
+    
+    //Store the currentScreen
+    @AppStorage("currentScreen") var currentScreen = 0
+    
     //Check for last page
     var lastPage = data.count - 1
+    
     //Check for first page
     var firstPage = 0
+    
     @Namespace var namespace
     
     var body: some View {
@@ -97,8 +188,8 @@ struct ContentView: View {
                             HStack {
                                 Text("next →")
                                     .padding(20)
-                                    .padding(.leading, 25)
-                                    .padding(.trailing, 25)
+                                    .padding(.leading, 18)
+                                    .padding(.trailing, 18)
                                     .font(Font.custom("Aeonik-Regular", size: 24))
                                     .background(Color("Pastel Green"))
                                     .foregroundColor(Color("Navy Blue"))
@@ -129,8 +220,8 @@ struct ContentView: View {
                             HStack {
                                 Text("next →")
                                     .padding(20)
-                                    .padding(.leading, 25)
-                                    .padding(.trailing, 25)
+                                    .padding(.leading, 18)
+                                    .padding(.trailing, 18)
                                     .font(Font.custom("Aeonik-Regular", size: 24))
                                     .background(Color("Pastel Purple"))
                                     .foregroundColor(Color("Navy Blue"))
@@ -141,16 +232,16 @@ struct ContentView: View {
                         })
                     } else {
                         Button(action: {
-                            currentPage += 1
+                            currentScreen = 4
                             withAnimation {
-                                xOffset = -screenWidth * CGFloat(currentPage)
+                                xOffset = -screenWidth * CGFloat(currentScreen)
                             }
                         }, label: {
                             HStack {
                                 Text("get started")
                                     .padding(20)
-                                    .padding(.leading, 25)
-                                    .padding(.trailing, 25)
+                                    .padding(.leading, 70)
+                                    .padding(.trailing, 70)
                                     .font(Font.custom("Aeonik-Regular", size: 24))
                                     .background(Color("Pastel Orange"))
                                     .foregroundColor(Color("Navy Blue"))
@@ -183,67 +274,6 @@ struct ContentView: View {
         
         withAnimation {
             xOffset = -screenWidth * CGFloat(currentPage)
-        }
-    }
-}
-
-//Onboarding Item View
-struct ItemView: View {
-    
-    //Instance of item
-    var item: Item
-    
-    var body: some View {
-        ZStack {
-            //Background Colour
-            Color("White")
-                .ignoresSafeArea()
-            
-            //VStack for all onboarding content
-            VStack {
-                //Onboarding Image
-                Image(item.image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .ignoresSafeArea()
-                
-                VStack {
-                    //Onboarding Title Text
-                    if (item.titleStart == "Speak ") {
-                        Text(item.titleStart)
-                            .font(Font.custom("Aeonik-Bold", size: 28))
-                            .foregroundColor(Color("Pastel Green"))
-                        + Text(item.titleEnd)
-                            .font(Font.custom("Aeonik-Bold", size: 28))
-                            .foregroundColor(Color("Navy Blue"))
-                    } else if (item.titleStart == "Understand ") {
-                        Text(item.titleStart)
-                            .font(Font.custom("Aeonik-Bold", size: 28))
-                            .foregroundColor(Color("Pastel Purple"))
-                        + Text(item.titleEnd)
-                            .font(Font.custom("Aeonik-Bold", size: 28))
-                            .foregroundColor(Color("Navy Blue"))
-                    } else {
-                        Text(item.titleStart)
-                            .font(Font.custom("Aeonik-Bold", size: 28))
-                            .foregroundColor(Color("Pastel Orange"))
-                        + Text(item.titleEnd)
-                            .font(Font.custom("Aeonik-Bold", size: 28))
-                            .foregroundColor(Color("Navy Blue"))
-                    }
-                    
-                    //Onboarding Detail Text
-                    Text(item.detail)
-                        .font(Font.custom("Aeonik-Regular", size: 18))
-                        .foregroundColor(Color("Navy Blue"))
-                        .lineSpacing(5)
-                        .padding(.top, 10)
-                    
-                }
-                .frame(width: 320, height: 180, alignment: .topLeading)
-                
-                Spacer()
-            }
         }
     }
 }
