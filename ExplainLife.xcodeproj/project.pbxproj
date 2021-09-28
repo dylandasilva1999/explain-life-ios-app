@@ -12,6 +12,7 @@
 		57ED53CA2703182D001C2622 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57ED53C92703182D001C2622 /* Assets.xcassets */; };
 		57ED53CD2703182D001C2622 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57ED53CC2703182D001C2622 /* Preview Assets.xcassets */; };
 		57ED53D4270357C8001C2622 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57ED53D3270357C8001C2622 /* GoogleService-Info.plist */; };
+		57ED53D927035E46001C2622 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 57ED53D827035E46001C2622 /* .gitignore */; };
 		97F6E66EB4C96DA292C62429 /* Pods_ExplainLife.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3A3343DB1657E397B3ED8B /* Pods_ExplainLife.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +25,7 @@
 		57ED53C92703182D001C2622 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57ED53CC2703182D001C2622 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		57ED53D3270357C8001C2622 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		57ED53D827035E46001C2622 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A1380F4F71226FE8ED9B78AF /* Pods-ExplainLife.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExplainLife.release.xcconfig"; path = "Target Support Files/Pods-ExplainLife/Pods-ExplainLife.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -45,7 +47,6 @@
 				54FE607964BD3563BC299D55 /* Pods-ExplainLife.debug.xcconfig */,
 				A1380F4F71226FE8ED9B78AF /* Pods-ExplainLife.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -60,6 +61,7 @@
 		57ED53B92703182B001C2622 = {
 			isa = PBXGroup;
 			children = (
+				57ED53D727035E1B001C2622 /* Git */,
 				57ED53C42703182B001C2622 /* ExplainLife */,
 				57ED53C32703182B001C2622 /* Products */,
 				20BDD240A55514B7F2E7ED8A /* Pods */,
@@ -93,6 +95,14 @@
 				57ED53CC2703182D001C2622 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		57ED53D727035E1B001C2622 /* Git */ = {
+			isa = PBXGroup;
+			children = (
+				57ED53D827035E46001C2622 /* .gitignore */,
+			);
+			path = Git;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +165,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57ED53D927035E46001C2622 /* .gitignore in Resources */,
 				57ED53CD2703182D001C2622 /* Preview Assets.xcassets in Resources */,
 				57ED53CA2703182D001C2622 /* Assets.xcassets in Resources */,
 				57ED53D4270357C8001C2622 /* GoogleService-Info.plist in Resources */,
