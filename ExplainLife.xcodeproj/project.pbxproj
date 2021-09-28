@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57C044A12703A49100573195 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C044A02703A49100573195 /* Item.swift */; };
 		57ED53C62703182B001C2622 /* ExplainLifeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ED53C52703182B001C2622 /* ExplainLifeApp.swift */; };
 		57ED53C82703182B001C2622 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ED53C72703182B001C2622 /* ContentView.swift */; };
 		57ED53CA2703182D001C2622 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57ED53C92703182D001C2622 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		2B3A3343DB1657E397B3ED8B /* Pods_ExplainLife.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExplainLife.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54FE607964BD3563BC299D55 /* Pods-ExplainLife.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExplainLife.debug.xcconfig"; path = "Target Support Files/Pods-ExplainLife/Pods-ExplainLife.debug.xcconfig"; sourceTree = "<group>"; };
+		57C044A02703A49100573195 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		57ED53C22703182B001C2622 /* ExplainLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExplainLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57ED53C52703182B001C2622 /* ExplainLifeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainLifeApp.swift; sourceTree = "<group>"; };
 		57ED53C72703182B001C2622 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,6 +69,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		57C0449F2703A3D800573195 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				57C044A02703A49100573195 /* Item.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		57ED53B92703182B001C2622 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +99,7 @@
 		57ED53C42703182B001C2622 /* ExplainLife */ = {
 			isa = PBXGroup;
 			children = (
+				57C0449F2703A3D800573195 /* Model */,
 				57ED53DC270370E8001C2622 /* Fonts */,
 				57ED53E3270372DB001C2622 /* Info.plist */,
 				57ED53D3270357C8001C2622 /* GoogleService-Info.plist */,
@@ -248,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57ED53C82703182B001C2622 /* ContentView.swift in Sources */,
+				57C044A12703A49100573195 /* Item.swift in Sources */,
 				57ED53C62703182B001C2622 /* ExplainLifeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
