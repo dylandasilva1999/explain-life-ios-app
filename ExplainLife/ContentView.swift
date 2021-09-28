@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//Content View
 struct ContentView: View {
     
     @State var currentPage = 3
@@ -14,7 +15,7 @@ struct ContentView: View {
     
     var body: some View {
         if currentScreen > 3 {
-            SignIn()
+            SignUpView()
         } else {
             OnboardingScreen()
         }
@@ -82,10 +83,10 @@ struct ItemView: View {
     }
 }
 
-//Login View
-struct SignIn: View {
+//Sign Up View
+struct SignUpView: View {
     var body: some View {
-        Text("Sign In Screen")
+        Text("Sign Up Screen")
     }
 }
 
@@ -278,6 +279,7 @@ struct OnboardingScreen: View {
     }
 }
 
+//Content View Preview
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
