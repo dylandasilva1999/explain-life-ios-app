@@ -9,6 +9,7 @@ target 'ExplainLife' do
   
   # add the Firebase pod for Google Analytics
   pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
   # or pod ‘Firebase/AnalyticsWithoutAdIdSupport’
   # for Analytics without IDFA collection capability
 
