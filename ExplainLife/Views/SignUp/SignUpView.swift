@@ -47,7 +47,7 @@ struct SignUpView: View {
                         Spacer()
                     }
                     
-                    //Sign Up Logo
+                    //Sign Up Image
                     Image("Sign Up")
                         .resizable()
                         .renderingMode(.original)
