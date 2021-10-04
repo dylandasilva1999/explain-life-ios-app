@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct SignInView: View {
     
@@ -54,7 +55,7 @@ struct SignInView: View {
                         
                         VStack(alignment: .leading, spacing: 2) {
                             //Sign welcome text
-                            Text("welcome back!")
+                            Text("welcome to explain life.")
                                 .font(Font.custom("Aeonik-Light", size: 22))
                                 .foregroundColor(Color("Navy Blue"))
                             //Sign In boilerplate text
@@ -64,6 +65,7 @@ struct SignInView: View {
                             
                             //Email input field
                             TextField("email", text: self.$email)
+                                .autocapitalization(.none)
                                 .font(Font.custom("Aeonik-Regular", size: 20))
                                 .padding(20)
                                 .foregroundColor(Color("Navy Blue"))
@@ -79,11 +81,13 @@ struct SignInView: View {
                                             .font(Font.custom("Aeonik-Regular", size: 20))
                                             .foregroundColor(Color("Navy Blue"))
                                             .preferredColorScheme(.light)
+                                            .autocapitalization(.none)
                                     } else  {
                                         SecureField("password", text: self.$password)
                                             .font(Font.custom("Aeonik-Regular", size: 20))
                                             .foregroundColor(Color("Navy Blue"))
                                             .preferredColorScheme(.light)
+                                            .autocapitalization(.none)
                                     }
                                 }
                                 
@@ -105,7 +109,7 @@ struct SignInView: View {
                                 Spacer()
                                 
                                 Button(action: {
-                                    
+                                    self.resetPassword()
                                 }) {
                                     Text("forgot your password?")
                                         .font(Font.custom("Aeonik-Regular", size: 22))
@@ -144,9 +148,42 @@ struct SignInView: View {
     
     func verify() {
         if self.email != "" && self.password != "" {
-            
+            Auth.auth().signIn(withEmail: self.email, password: self.password) { (res, err) in
+                if err != nil {
+                    self.error = err!.localizedDescription
+                    self.alert.toggle()
+                    return
+                }
+                
+                UserDefaults.standard.set(true, forKey: "status")
+                NotificationCenter.default.post(name: NSNotification.Name("status"), object: nil)
+            }
+        } else if self.email == "" && self.password != "" {
+            self.error = "Please fill in your email."
+            self.alert.toggle()
+        } else if self.password == "" && self.email != "" { 
+            self.error = "Please fill in your password."
+            self.alert.toggle()
         } else {
-            self.error = "Please fill in your email and password"
+            self.error = "Please fill in all your information."
+            self.alert.toggle()
+        }
+    }
+    
+    func resetPassword() {
+        if self.email != "" {
+            Auth.auth().sendPasswordReset(withEmail: self.email) { (err) in
+                if err != nil {
+                    self.error = err!.localizedDescription
+                    self.alert.toggle()
+                    return
+                }
+                
+                self.error = "RESET"
+                self.alert.toggle()
+            }
+        } else {
+            self.error = "Your email field is empty."
             self.alert.toggle()
         }
     }

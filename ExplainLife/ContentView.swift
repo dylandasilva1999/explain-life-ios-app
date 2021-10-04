@@ -13,21 +13,34 @@ struct ContentView: View {
     @State var currentPage = 3
     @AppStorage("currentScreen") var currentScreen = 0
     @State var show = false
+    @State var status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
     
     var body: some View {
         if currentScreen > 3 {
             NavigationView {
-                ZStack {
-                    NavigationLink(destination: SignUpView(show: self.$show), isActive: self.$show) {
-                        Text("")
+                
+                VStack {
+                    if self.status {
+                        MainView()
+                    } else {
+                        ZStack {
+                            NavigationLink(destination: SignUpView(show: self.$show), isActive: self.$show) {
+                                Text("")
+                            }
+                            .hidden()
+                            
+                            SignInView(show: self.$show)
+                        }
                     }
-                    .hidden()
-                    
-                    SignInView(show: self.$show)
                 }
                 .navigationTitle("")
                 .navigationBarHidden(true)
                 .navigationBarBackButtonHidden(true)
+                .onAppear {
+                    NotificationCenter.default.addObserver(forName: NSNotification.Name("status"), object: nil, queue: .main) { (_) in
+                        self.status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
+                    }
+                }
             }
         } else {
             OnboardingScreenView()

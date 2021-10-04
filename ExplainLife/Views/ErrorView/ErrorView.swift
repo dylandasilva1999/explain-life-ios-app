@@ -17,7 +17,7 @@ struct ErrorView: View {
         GeometryReader{_ in
             VStack {
                 HStack {
-                    Text("Almost there...")
+                    Text(self.error == "RESET" ? "Message" : "Almost there...")
                         .font(Font.custom("Aeonik-Bold", size: 25))
                         .foregroundColor(Color("Navy Blue"))
                     
@@ -27,7 +27,7 @@ struct ErrorView: View {
                 .padding(.vertical, 5)
                 
                 HStack {
-                    Text(self.error)
+                    Text(self.error == "RESET" ? "A password reset link has been sent to your inbox" : self.error)
                         .font(Font.custom("Aeonik-Regular", size: 20))
                         .foregroundColor(Color("Navy Blue"))
                         .multilineTextAlignment(.leading)
@@ -40,7 +40,7 @@ struct ErrorView: View {
                 Button(action: {
                     self.alert.toggle()
                 }) {
-                    Text("Cancel")
+                    Text(self.error == "RESET" ? "Ok" : "close window")
                         .font(Font.custom("Aeonik-Regular", size: 25))
                         .foregroundColor(Color("Navy Blue"))
                         .padding(.vertical, 22)
