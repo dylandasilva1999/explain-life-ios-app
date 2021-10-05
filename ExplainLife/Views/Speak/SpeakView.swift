@@ -37,7 +37,7 @@ struct SpeakView: View {
                             .foregroundColor(Color("Navy Blue"))
                 })
                 .cornerRadius(20)
-                .groupBoxStyle(TransparentGroupBox())
+                .groupBoxStyle(TransparentGroupBoxSpeak())
             }
             .frame(width: UIScreen.main.bounds.width - 80)
             
@@ -95,7 +95,7 @@ struct SpeakView_Previews: PreviewProvider {
 }
 
 //Transparent Custom GroupBoxStyle
-struct TransparentGroupBox: GroupBoxStyle {
+struct TransparentGroupBoxSpeak: GroupBoxStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.content
             .frame(maxWidth: .infinity)

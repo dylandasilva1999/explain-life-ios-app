@@ -23,6 +23,7 @@ struct MainView: View {
                                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/1.1)
                         } else if selectedTab == "record" {
                             RecordView()
+                                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/1.1)
                         } else if selectedTab == "emotion" {
                             EmotionView()
                         } else if selectedTab == "profile" {
