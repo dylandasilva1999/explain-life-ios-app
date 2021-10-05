@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct EmotionView: View {
     var body: some View {
@@ -38,10 +39,17 @@ struct EmotionView: View {
             .frame(width: UIScreen.main.bounds.width - 80)
             
             VStack(spacing: 20) {
+                //Joy and Trust Buttons
                 HStack(spacing: 20) {
                     //Joy Button
                     Button(action: {
-
+                        let utterance = AVSpeechUtterance(string: "I am feeling joyful")
+                        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+                        
+                        utterance.rate = 0.5
+                        
+                        let synthesizer = AVSpeechSynthesizer()
+                        synthesizer.speak(utterance)
                     }) {
                         VStack {
                             Image("joy")
@@ -61,7 +69,13 @@ struct EmotionView: View {
                     
                     //Trust Button
                     Button(action: {
-
+                        let utterance = AVSpeechUtterance(string: "I am feeling trustworthy")
+                        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+                        
+                        utterance.rate = 0.5
+                        
+                        let synthesizer = AVSpeechSynthesizer()
+                        synthesizer.speak(utterance)
                     }) {
                         VStack {
                             Image("trust")
@@ -79,11 +93,17 @@ struct EmotionView: View {
                     .background(Color("Muted Pastel Orange"))
                     .cornerRadius(30)
                 }
-                
+                //Fear and Surprise Buttons
                 HStack(spacing: 20) {
-                    //Joy Button
+                    //Fear Button
                     Button(action: {
-
+                        let utterance = AVSpeechUtterance(string: "I am a bit scared")
+                        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+                        
+                        utterance.rate = 0.5
+                        
+                        let synthesizer = AVSpeechSynthesizer()
+                        synthesizer.speak(utterance)
                     }) {
                         VStack {
                             Image("fear")
@@ -101,9 +121,15 @@ struct EmotionView: View {
                     .background(Color("Muted Pastel Orange"))
                     .cornerRadius(30)
                     
-                    //Trust Button
+                    //Surprise Button
                     Button(action: {
-
+                        let utterance = AVSpeechUtterance(string: "I am feeling super surprised")
+                        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+                        
+                        utterance.rate = 0.5
+                        
+                        let synthesizer = AVSpeechSynthesizer()
+                        synthesizer.speak(utterance)
                     }) {
                         VStack {
                             Image("surprise")
@@ -121,11 +147,17 @@ struct EmotionView: View {
                     .background(Color("Muted Pastel Orange"))
                     .cornerRadius(30)
                 }
-                
+                //Sadness and Disgust Buttons
                 HStack(spacing: 20) {
-                    //Joy Button
+                    //Sadness Button
                     Button(action: {
-
+                        let utterance = AVSpeechUtterance(string: "I am feeling down and sad")
+                        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+                        
+                        utterance.rate = 0.5
+                        
+                        let synthesizer = AVSpeechSynthesizer()
+                        synthesizer.speak(utterance)
                     }) {
                         VStack {
                             Image("sadness")
@@ -143,9 +175,15 @@ struct EmotionView: View {
                     .background(Color("Muted Pastel Orange"))
                     .cornerRadius(30)
                     
-                    //Trust Button
+                    //Disgust Button
                     Button(action: {
-
+                        let utterance = AVSpeechUtterance(string: "I am feeling disgusted")
+                        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+                        
+                        utterance.rate = 0.5
+                        
+                        let synthesizer = AVSpeechSynthesizer()
+                        synthesizer.speak(utterance)
                     }) {
                         VStack {
                             Image("disgust")
@@ -163,11 +201,17 @@ struct EmotionView: View {
                     .background(Color("Muted Pastel Orange"))
                     .cornerRadius(30)
                 }
-                
+                //Anger and Anticipation Buttons
                 HStack(spacing: 20) {
-                    //Joy Button
+                    //Anger Button
                     Button(action: {
-
+                        let utterance = AVSpeechUtterance(string: "I am angry ggggrrr")
+                        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+                        
+                        utterance.rate = 0.5
+                        
+                        let synthesizer = AVSpeechSynthesizer()
+                        synthesizer.speak(utterance)
                     }) {
                         VStack {
                             Image("anger")
@@ -185,9 +229,15 @@ struct EmotionView: View {
                     .background(Color("Muted Pastel Orange"))
                     .cornerRadius(30)
                     
-                    //Trust Button
+                    //Anticipation Button
                     Button(action: {
-
+                        let utterance = AVSpeechUtterance(string: "I am feeling anticipating")
+                        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+                        
+                        utterance.rate = 0.5
+                        
+                        let synthesizer = AVSpeechSynthesizer()
+                        synthesizer.speak(utterance)
                     }) {
                         VStack {
                             Image("anticipation")
