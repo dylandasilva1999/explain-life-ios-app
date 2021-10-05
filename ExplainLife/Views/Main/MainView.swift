@@ -11,22 +11,25 @@ import FirebaseAuth
 struct MainView: View {
     
     @State var selectedTab = "speak"
-    var edges = UIApplication.shared.windows.first?.safeAreaInsets
+    //var edges = UIApplication.shared.windows.first?.safeAreaInsets
     
     var body: some View {
         VStack(spacing: 0) {
             GeometryReader {_ in
                 ZStack {
-                    if selectedTab == "speak" {
-                        SpeakView()
-                    } else if selectedTab == "record" {
-                        RecordView()
-                    } else if selectedTab == "emotion" {
-                        EmotionView()
-                    } else if selectedTab == "profile" {
-                        ProfileView()
-                    } else {
-                        SettingsView()
+                    ScrollView {
+                        if selectedTab == "speak" {
+                            SpeakView()
+                                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/1.1)
+                        } else if selectedTab == "record" {
+                            RecordView()
+                        } else if selectedTab == "emotion" {
+                            EmotionView()
+                        } else if selectedTab == "profile" {
+                            ProfileView()
+                        } else {
+                            SettingsView()
+                        }
                     }
                 }
             }
@@ -45,8 +48,8 @@ struct MainView: View {
             .padding(.bottom, 30)
             .background(Color("White"))
         }
-        .ignoresSafeArea(.all, edges: .bottom)
-        .background(Color.black.opacity(0.06).ignoresSafeArea(.all, edges: .all))
+        .ignoresSafeArea(.all)
+        .background(Color("White").opacity(1).ignoresSafeArea(.all))
     }
 }
 
