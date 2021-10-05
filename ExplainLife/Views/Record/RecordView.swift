@@ -44,7 +44,6 @@ struct RecordView: View {
                     .foregroundColor(Color("Navy Blue"))
                     .frame(width: UIScreen.main.bounds.width - 80)
                     .multilineTextAlignment(.leading)
-        
             }
             
             Spacer()

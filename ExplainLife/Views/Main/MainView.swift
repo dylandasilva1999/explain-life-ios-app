@@ -10,7 +10,7 @@ import FirebaseAuth
 
 struct MainView: View {
     
-    @State var selectedTab = "speak"
+    @State var selectedTab = "emotion"
     //var edges = UIApplication.shared.windows.first?.safeAreaInsets
     
     var body: some View {
@@ -26,10 +26,13 @@ struct MainView: View {
                                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/1.1)
                         } else if selectedTab == "emotion" {
                             EmotionView()
+                                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/1.1)
                         } else if selectedTab == "profile" {
                             ProfileView()
+                                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/1.1)
                         } else {
                             SettingsView()
+                                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/1.1)
                         }
                     }
                 }
