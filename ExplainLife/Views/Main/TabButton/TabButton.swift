@@ -19,19 +19,72 @@ struct TabButton: View {
             }
         }) {
             VStack(spacing: 6) {
-                
-                //Custom Shape
-                CustomShape()
-                    .fill(Color("Pastel Green").opacity(selectedTab == title ? 1 : 0))
-                    .frame(width: 60, height: 6)
-                    .padding(.bottom, 10)
-                
-                //Tab Item Image
-                Image(title)
-                    .renderingMode(.template)
-                    .resizable()
-                    .foregroundColor(selectedTab == title ? Color("Pastel Green") : Color("Navy Blue").opacity(1.0))
-                    .frame(width: 35, height: 35)
+                if title == "speak" {
+                    //Custom Shape
+                    CustomShape()
+                        .fill(Color("Pastel Green").opacity(selectedTab == title ? 1 : 0))
+                        .frame(width: 60, height: 6)
+                        .padding(.bottom, 10)
+                    
+                    //Tab Item Image
+                    Image(title)
+                        .renderingMode(.template)
+                        .resizable()
+                        .foregroundColor(selectedTab == title ? Color("Pastel Green") : Color("Navy Blue").opacity(1.0))
+                        .frame(width: 35, height: 35)
+                } else if title == "record" {
+                    //Custom Shape
+                    CustomShape()
+                        .fill(Color("Pastel Purple").opacity(selectedTab == title ? 1 : 0))
+                        .frame(width: 60, height: 6)
+                        .padding(.bottom, 10)
+                    
+                    //Tab Item Image
+                    Image(title)
+                        .renderingMode(.template)
+                        .resizable()
+                        .foregroundColor(selectedTab == title ? Color("Pastel Purple") : Color("Navy Blue").opacity(1.0))
+                        .frame(width: 35, height: 35)
+                } else if title == "emotion" {
+                    //Custom Shape
+                    CustomShape()
+                        .fill(Color("Pastel Orange").opacity(selectedTab == title ? 1 : 0))
+                        .frame(width: 60, height: 6)
+                        .padding(.bottom, 10)
+                    
+                    //Tab Item Image
+                    Image(title)
+                        .renderingMode(.template)
+                        .resizable()
+                        .foregroundColor(selectedTab == title ? Color("Pastel Orange") : Color("Navy Blue").opacity(1.0))
+                        .frame(width: 35, height: 35)
+                } else if title == "profile" {
+                    //Custom Shape
+                    CustomShape()
+                        .fill(Color("Pastel Blue").opacity(selectedTab == title ? 1 : 0))
+                        .frame(width: 60, height: 6)
+                        .padding(.bottom, 10)
+                    
+                    //Tab Item Image
+                    Image(title)
+                        .renderingMode(.template)
+                        .resizable()
+                        .foregroundColor(selectedTab == title ? Color("Pastel Blue") : Color("Navy Blue").opacity(1.0))
+                        .frame(width: 35, height: 35)
+                } else {
+                    //Custom Shape
+                    CustomShape()
+                        .fill(Color("Pastel Pink").opacity(selectedTab == title ? 1 : 0))
+                        .frame(width: 60, height: 6)
+                        .padding(.bottom, 10)
+                    
+                    //Tab Item Image
+                    Image(title)
+                        .renderingMode(.template)
+                        .resizable()
+                        .foregroundColor(selectedTab == title ? Color("Pastel Pink") : Color("Navy Blue").opacity(1.0))
+                        .frame(width: 35, height: 35)
+                }
                 
                 //Tab Item Text
                 Text(title)
