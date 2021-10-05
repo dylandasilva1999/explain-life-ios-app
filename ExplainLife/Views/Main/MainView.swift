@@ -10,7 +10,7 @@ import FirebaseAuth
 
 struct MainView: View {
     
-    @State var selectedTab = "emotion"
+    @State var selectedTab = "speak"
     //var edges = UIApplication.shared.windows.first?.safeAreaInsets
     
     var body: some View {
