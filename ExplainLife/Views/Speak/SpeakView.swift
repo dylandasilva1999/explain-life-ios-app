@@ -51,8 +51,7 @@ struct SpeakView: View {
                 
                 //Text Area input
                 TextArea(text: $text)
-                    .frame(width: UIScreen.main.bounds.width - 80, height: 200)
-                    .cornerRadius(30)
+                    .frame(width: UIScreen.main.bounds.width - 80, height: 250)
             }
             
             Spacer()
@@ -67,7 +66,7 @@ struct SpeakView: View {
                 let synthesizer = AVSpeechSynthesizer()
                 synthesizer.speak(utterance)
                 
-                text = "type here..."
+                //text = "type here..."
             }) {
                 Image("speak")
                     .font(.title)
@@ -113,10 +112,11 @@ struct TextArea: UIViewRepresentable {
         let myTextArea = UITextView()
         myTextArea.delegate = context.coordinator
         myTextArea.font = UIFont(name: "Aeonik-Regular", size: 22)
-        myTextArea.backgroundColor = UIColor(Color("Muted Pastel Green"))
+        //myTextArea.backgroundColor = UIColor(Color("Muted Pastel Green"))
+        myTextArea.layer.borderWidth = 3.0
+        myTextArea.layer.cornerRadius = 20
+        myTextArea.layer.borderColor = UIColor(Color("Pastel Green")).cgColor
         myTextArea.contentInset = UIEdgeInsets(top: 20, left: 25, bottom: 25, right: 25)
-        myTextArea.text = "Placeholder"
-        myTextArea.textColor = UIColor(Color("Navy Blue"))
         
         return myTextArea
     }
