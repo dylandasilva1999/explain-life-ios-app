@@ -83,6 +83,9 @@ PODS:
   - GoogleUtilities/UserDefaults (7.5.2):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.7.0)
+  - IBMSwiftSDKCore (1.0.0)
+  - IBMWatsonToneAnalyzerV3 (4.3.0):
+    - IBMSwiftSDKCore (~> 1.0.0)
   - nanopb (2.30908.0):
     - nanopb/decode (= 2.30908.0)
     - nanopb/encode (= 2.30908.0)
@@ -93,6 +96,7 @@ PODS:
 DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Auth
+  - IBMWatsonToneAnalyzerV3 (~> 4.3.0)
 
 SPEC REPOS:
   trunk:
@@ -106,6 +110,8 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleUtilities
     - GTMSessionFetcher
+    - IBMSwiftSDKCore
+    - IBMWatsonToneAnalyzerV3
     - nanopb
     - PromisesObjC
 
@@ -120,9 +126,11 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 85fd18ff3019bb85d3f2c551d04c481dedf71fc9
   GoogleUtilities: 8de2a97a17e15b6b98e38e8770e2d129a57c0040
   GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
+  IBMSwiftSDKCore: 54ad77b03a4d27b218ba514580197db3b89a96ca
+  IBMWatsonToneAnalyzerV3: fb6bcfb2c87a8ce92f531a237beb3abb59cd325f
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
 
-PODFILE CHECKSUM: c7e6cd56dbd56b5b1603ee0c3fed71c96ea45fca
+PODFILE CHECKSUM: 650fb00a55dd7adeb47aeb1126ca4dfcc531df34
 
 COCOAPODS: 1.11.2

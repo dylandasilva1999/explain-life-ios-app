@@ -10,6 +10,9 @@ target 'ExplainLife' do
   # add the Firebase pod for Google Analytics
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
+
+  pod 'IBMWatsonToneAnalyzerV3', '~> 4.3.0'
+
   # or pod ‘Firebase/AnalyticsWithoutAdIdSupport’
   # for Analytics without IDFA collection capability
 

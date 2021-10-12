@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ToneAnalyzer
 
 struct RecordView: View {
     

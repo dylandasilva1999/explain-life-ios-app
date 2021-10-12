@@ -1,0 +1,6 @@
+framework module ToneAnalyzer {
+  umbrella header "IBMWatsonToneAnalyzerV3-umbrella.h"
+
+  export *
+  module * { export * }
+}
