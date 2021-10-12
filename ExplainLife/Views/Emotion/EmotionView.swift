@@ -38,7 +38,7 @@ struct EmotionView: View {
             }
             .frame(width: UIScreen.main.bounds.width - 80)
             
-            VStack(spacing: 20) {
+            VStack(spacing: 22) {
                 //Joy and Trust Buttons
                 HStack(spacing: 20) {
                     //Joy Button
