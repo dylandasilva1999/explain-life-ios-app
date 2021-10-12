@@ -41,28 +41,29 @@ struct RecordView: View {
             }
             .frame(width: UIScreen.main.bounds.width - 80)
             
-            VStack(spacing: 20) {
-                //Remeber text
-                Text("Record a sentence at a time.")
+            VStack(spacing: 10) {
+                //Tip Text
+                Text("Record one sentence at a time.")
                     .font(Font.custom("Aeonik-Bold", size: 22))
                     .foregroundColor(Color("Navy Blue"))
                     .frame(width: UIScreen.main.bounds.width - 80)
                     .multilineTextAlignment(.leading)
                 
                 VStack{
-                    // prints results to screen
-                    Text("\(swiftUISpeech.analysisText)")
-                        .font(Font.custom("Aeonik-Bold", size: 25))
+                    //Prints results to screen
+                    Text("\(swiftUISpeech.outputText)")
+                        .font(Font.custom("Aeonik-Bold", size: 20))
                         .foregroundColor(Color("Pastel Purple"))
-                        .frame(width: UIScreen.main.bounds.width - 80)
+                        .frame(width: UIScreen.main.bounds.width - 95, height: 180)
                         .multilineTextAlignment(.leading)
                 }
-                .frame(width: UIScreen.main.bounds.width - 80, height: UIScreen.main.bounds.height - 730)
+                .frame(width: UIScreen.main.bounds.width - 80, height: UIScreen.main.bounds.height - 720)
+                .padding(.top, 10)
                 
                 VStack {
-                    // Speech button
+                    //Speech button
                     swiftUISpeech.getButton()
-                        .padding(.top, 20)
+                        .padding(.top, 25)
                     Spacer()
                 }
             }
@@ -73,8 +74,8 @@ struct RecordView: View {
             Button(action: {
                 
             }) {
-                Image("record")
-                    .font(.title)
+                Image(systemName: "info.circle.fill")
+                    .font(.title2)
                     .foregroundColor(Color("Navy Blue"))
                     .padding(.top, 5)
                     .padding(.trailing, 5)
