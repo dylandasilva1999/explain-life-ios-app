@@ -10,7 +10,7 @@ import AVFoundation
 
 struct SpeakView: View {
     
-    @State var text = ""
+    @State var text = "type here..."
     
     var body: some View {
         VStack(spacing: 40) {

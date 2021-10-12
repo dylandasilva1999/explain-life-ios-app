@@ -8,5 +8,7 @@
 		<string>Aeonik-Light.otf</string>
 		<string>Aeonik-Regular.otf</string>
 	</array>
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>recognize speech</string>
 </dict>
 </plist>

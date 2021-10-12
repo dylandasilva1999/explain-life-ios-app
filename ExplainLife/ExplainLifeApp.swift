@@ -15,9 +15,11 @@ struct ExplainLifeApp: App {
     //Create an instance of AppDelegate
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
+    @EnvironmentObject var swiftUISpeech:SwiftUISpeech
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(SwiftUISpeech())
         }
     }
 }

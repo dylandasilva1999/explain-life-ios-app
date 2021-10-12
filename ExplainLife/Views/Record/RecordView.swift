@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct RecordView: View {
+    
+    @EnvironmentObject var swiftUISpeech:SwiftUISpeech
+    public var analysisText : String = ""
+    
     var body: some View {
         VStack(spacing: 40) {
             VStack(spacing: 20) {
@@ -28,12 +32,12 @@ struct RecordView: View {
                 }
                 //Custom Groupbox
                 GroupBox(
-                    content: { Text("press the record button at the bottom to start recording a conversation and gain insight.")
+                    content: { Text("press the circle waveform button in the center to start recording a conversation.")
                             .font(Font.custom("Aeonik-Regular", size: 18))
                             .foregroundColor(Color("Navy Blue"))
-                })
-                .cornerRadius(20)
-                .groupBoxStyle(TransparentGroupBoxRecord())
+                    })
+                    .cornerRadius(20)
+                    .groupBoxStyle(TransparentGroupBoxRecord())
             }
             .frame(width: UIScreen.main.bounds.width - 80)
             
@@ -44,13 +48,30 @@ struct RecordView: View {
                     .foregroundColor(Color("Navy Blue"))
                     .frame(width: UIScreen.main.bounds.width - 80)
                     .multilineTextAlignment(.leading)
+                
+                VStack{
+                    // prints results to screen
+                    Text("\(swiftUISpeech.analysisText)")
+                        .font(Font.custom("Aeonik-Bold", size: 25))
+                        .foregroundColor(Color("Pastel Purple"))
+                        .frame(width: UIScreen.main.bounds.width - 80)
+                        .multilineTextAlignment(.leading)
+                }
+                .frame(width: UIScreen.main.bounds.width - 80, height: UIScreen.main.bounds.height - 730)
+                
+                VStack {
+                    // Speech button
+                    swiftUISpeech.getButton()
+                        .padding(.top, 20)
+                    Spacer()
+                }
             }
             
             Spacer()
             
             //Say out loud button
             Button(action: {
-
+                
             }) {
                 Image("record")
                     .font(.title)
@@ -58,7 +79,7 @@ struct RecordView: View {
                     .padding(.top, 5)
                     .padding(.trailing, 5)
                 
-                Text("record conversation")
+                Text("view insights")
                     .font(Font.custom("Aeonik-Regular", size: 25))
                     .foregroundColor(Color("Navy Blue"))
                     .padding(.vertical, 25)
@@ -84,6 +105,6 @@ struct TransparentGroupBoxRecord: GroupBoxStyle {
 
 struct RecordView_Previews: PreviewProvider {
     static var previews: some View {
-        RecordView()
+        RecordView().environmentObject(SwiftUISpeech())
     }
 }

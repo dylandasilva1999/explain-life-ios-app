@@ -14,6 +14,7 @@ struct ContentView: View {
     @AppStorage("currentScreen") var currentScreen = 0
     @State var show = false
     @State var status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
+    @EnvironmentObject var swiftUISpeech:SwiftUISpeech
     
     var body: some View {
         if currentScreen > 3 {

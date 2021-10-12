@@ -12,6 +12,7 @@ struct MainView: View {
     
     @State var selectedTab = "speak"
     //var edges = UIApplication.shared.windows.first?.safeAreaInsets
+    @EnvironmentObject var swiftUISpeech:SwiftUISpeech
     
     var body: some View {
         VStack(spacing: 0) {
@@ -59,7 +60,7 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainView().environmentObject(SwiftUISpeech())
     }
 }
 
