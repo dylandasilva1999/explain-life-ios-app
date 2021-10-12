@@ -22,18 +22,23 @@ struct MainView: View {
                         if selectedTab == "speak" {
                             SpeakView()
                                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/1.1)
+                                .transition(.opacity)
                         } else if selectedTab == "record" {
                             RecordView()
                                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/1.1)
+                                .transition(.opacity)
                         } else if selectedTab == "emotion" {
                             EmotionView()
                                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/1.1)
+                                .transition(.opacity)
                         } else if selectedTab == "profile" {
                             ProfileView()
                                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/1.1)
+                                .transition(.opacity)
                         } else {
                             SettingsView()
                                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/1.1)
+                                .transition(.opacity)
                         }
                     }
                 }

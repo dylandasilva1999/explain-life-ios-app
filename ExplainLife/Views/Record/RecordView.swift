@@ -11,6 +11,7 @@ struct RecordView: View {
     
     @EnvironmentObject var swiftUISpeech:SwiftUISpeech
     public var analysisText : String = ""
+    @State private var isPresented = false
     
     var body: some View {
         VStack(spacing: 40) {
@@ -72,7 +73,7 @@ struct RecordView: View {
             
             //Say out loud button
             Button(action: {
-                
+                self.isPresented.toggle()
             }) {
                 Image(systemName: "info.circle.fill")
                     .font(.title2)
@@ -88,6 +89,7 @@ struct RecordView: View {
             .frame(width: UIScreen.main.bounds.width - 80)
             .background(Color("Pastel Purple"))
             .cornerRadius(20)
+            .fullScreenCover(isPresented: $isPresented, content: AnalysisView.init)
         }
         .frame(height: UIScreen.main.bounds.height - 200)
     }
