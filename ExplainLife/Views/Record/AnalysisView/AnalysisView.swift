@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct AnalysisView: View {
+    
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var swiftUISpeech:SwiftUISpeech
     
     var body: some View {
         VStack {
-            Text("This is the Analysis View")
+            //Prints results to screen
+            Text("\(swiftUISpeech.analysisText)")
+                .font(Font.custom("Aeonik-Bold", size: 20))
+                .foregroundColor(Color("White"))
+                .frame(width: UIScreen.main.bounds.width - 95, height: 180)
+                .multilineTextAlignment(.leading)
+            
             Button(action: {
                 presentationMode.wrappedValue.dismiss()
             }, label: {
