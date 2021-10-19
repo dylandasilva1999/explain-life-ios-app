@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.4.4)
   - Firebase/Analytics (8.7.0):
     - Firebase/Core
   - Firebase/Auth (8.7.0):
@@ -92,14 +93,18 @@ PODS:
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - PromisesObjC (2.0.0)
+  - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.4)
   - Firebase/Analytics
   - Firebase/Auth
   - IBMWatsonToneAnalyzerV3 (~> 4.3.0)
+  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -114,8 +119,10 @@ SPEC REPOS:
     - IBMWatsonToneAnalyzerV3
     - nanopb
     - PromisesObjC
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
   Firebase: bc9325d5ee2041524bac78a5213d0e530c651309
   FirebaseAnalytics: 52768800c2add1d84b751420cb4caaf8195f2c41
   FirebaseAuth: 2e7d029977648c67a5d51a263d4cbab76d34cf12
@@ -130,7 +137,8 @@ SPEC CHECKSUMS:
   IBMWatsonToneAnalyzerV3: fb6bcfb2c87a8ce92f531a237beb3abb59cd325f
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 68164dfa5194db79fd1a196e1e8a3e91d33d6d70
+PODFILE CHECKSUM: 7838213072d877e076bed7db8e21e92ae1534b7f
 
 COCOAPODS: 1.11.2

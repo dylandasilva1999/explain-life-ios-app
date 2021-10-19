@@ -9,6 +9,6 @@
 		<string>Aeonik-Regular.otf</string>
 	</array>
 	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>Recognise Speech</string>
+	<string>Speech Recognition will be used to determine which words you speak into the device&apos;s microphone.</string>
 </dict>
 </plist>

@@ -72,7 +72,7 @@ struct RecordView: View {
             
             Spacer()
             
-            //Say out loud button
+            //View Insights button
             Button(action: {
                 self.isPresented.toggle()
             }) {

@@ -13,10 +13,13 @@ target 'ExplainLife' do
 
   pod 'IBMWatsonToneAnalyzerV3', '~> 4.3.0'
 
+  pod 'SwiftyJSON', '~> 4.0'
+  pod 'Alamofire', '~> 5.4'
+
   # or pod ‘Firebase/AnalyticsWithoutAdIdSupport’
   # for Analytics without IDFA collection capability
 
   # add pods for any other desired Firebase products
-  # https://firebase.google.com/docs/ios/setup#available-pods
+  # https://firebase.googl.com/docs/ios/setup#available-pods
 end
 

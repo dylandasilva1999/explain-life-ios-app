@@ -26,14 +26,14 @@ struct AnalysisView: View {
                 Button(action: {
                     self.doToneAnalyzer()
                 }, label: {
-                    Text("analyse text")
+                    Text("view tone of sentence")
                         .font(Font.custom("Aeonik-Regular", size: 25))
                         .foregroundColor(Color("Navy Blue"))
                         .padding(.vertical, 25)
                 })
-                .frame(width: UIScreen.main.bounds.width - 80)
-                .background(Color("Pastel Green"))
-                .cornerRadius(20)
+                    .frame(width: UIScreen.main.bounds.width - 80)
+                    .background(Color("Pastel Green"))
+                    .cornerRadius(20)
                 
                 Button(action: {
                     presentationMode.wrappedValue.dismiss()
@@ -49,9 +49,9 @@ struct AnalysisView: View {
                         .foregroundColor(Color("Navy Blue"))
                         .padding(.vertical, 25)
                 })
-                .frame(width: UIScreen.main.bounds.width - 80)
-                .background(Color("Pastel Orange"))
-                .cornerRadius(20)
+                    .frame(width: UIScreen.main.bounds.width - 80)
+                    .background(Color("Pastel Orange"))
+                    .cornerRadius(20)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -65,22 +65,19 @@ struct AnalysisView: View {
         let toneAnalyzer = ToneAnalyzer(version: "2017-09-21", authenticator: authenticator)
         toneAnalyzer.serviceURL = "https://api.au-syd.tone-analyzer.watson.cloud.ibm.com/instances/1956e6e2-d646-40cf-8bb5-33ad0ac7f322"
         
-        let utterances = [
-            Utterance(text: swiftUISpeech.analysisText),
-        ]
+        let text = swiftUISpeech.analysisText
         
-        toneAnalyzer.toneChat(
-            utterances: utterances,
-            acceptLanguage: "en")
+        toneAnalyzer.tone(
+          toneContent: .text(text))
         {
-            response, error in
-            
-            guard let analyses = response?.result else {
-                print(error as Any)
-                return
-            }
-            
-            print(analyses)
+          response, error in
+
+          guard let toneAnalysis = response?.result else {
+            print(error as Any)
+            return
+          }
+
+          print(toneAnalysis)
         }
     }
 }
