@@ -74,7 +74,11 @@ struct RecordView: View {
             
             //View Insights button
             Button(action: {
-                self.isPresented.toggle()
+                if swiftUISpeech.outputText != "" {
+                    self.isPresented.toggle()
+                } else {
+                    print("Record a sentence")
+                }
             }) {
                 Image(systemName: "info.circle.fill")
                     .font(.title2)

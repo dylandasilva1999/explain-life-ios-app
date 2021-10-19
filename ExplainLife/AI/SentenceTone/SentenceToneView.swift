@@ -9,17 +9,13 @@ import SwiftUI
 
 struct SentenceToneView : View {
     var name = ""
-    var score = ""
     
     var body: some View {
         HStack {
             Text(name)
-                .font(Font.custom("Aeonik-Regular", size: 25))
-                .foregroundColor(Color("Navy Blue"))
-            
-            Text(score)
-                .font(Font.custom("Aeonik-Regular", size: 25))
+                .font(Font.custom("Aeonik-Bold", size: 40))
                 .foregroundColor(Color("Navy Blue"))
         }
+        .frame(width: UIScreen.main.bounds.width - 80, height: 180)
     }
 }

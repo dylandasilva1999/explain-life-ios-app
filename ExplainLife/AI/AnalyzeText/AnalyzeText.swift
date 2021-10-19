@@ -15,6 +15,7 @@ class AnalyzeText : ObservableObject {
     
     @Published var toneData = [toneDataModel]()
     var swiftUISpeechText: SwiftUISpeech
+    var analysisText: String
     
     init(swiftUISpeechText: SwiftUISpeech) {
         
@@ -28,7 +29,9 @@ class AnalyzeText : ObservableObject {
         toneAnalyzer.disableSSLVerification()
         
         //Text to analyze
-        let text = swiftUISpeechText.analysisText.addingPercentEncoding(withAllowedCharacters: .symbols)
+        let text = swiftUISpeechText.outputText.addingPercentEncoding(withAllowedCharacters: .symbols)
+        
+        self.analysisText = swiftUISpeechText.analysisText
         
         let dataUrlString: String!
         dataUrlString = "https://api.au-syd.tone-analyzer.watson.cloud.ibm.com/instances/1956e6e2-d646-40cf-8bb5-33ad0ac7f322/v3/tone?version=2017-09-21&sentences=false&text=\(text ?? "Hi")"
