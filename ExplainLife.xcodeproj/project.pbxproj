@@ -23,6 +23,9 @@
 		57853A1227157CB300499FE9 /* SwiftUISpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57853A1127157CB300499FE9 /* SwiftUISpeech.swift */; };
 		57993DF5271597BB0061AE72 /* AnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57993DF4271597BB0061AE72 /* AnalysisView.swift */; };
 		57C044A12703A49100573195 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C044A02703A49100573195 /* Item.swift */; };
+		57C4A19D271F6F9B0037A094 /* toneDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4A19C271F6F9B0037A094 /* toneDataModel.swift */; };
+		57C4A1A0271F700E0037A094 /* SentenceToneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4A19F271F700E0037A094 /* SentenceToneView.swift */; };
+		57C4A1A3271F71010037A094 /* AnalyzeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4A1A2271F71010037A094 /* AnalyzeText.swift */; };
 		57ED53C62703182B001C2622 /* ExplainLifeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ED53C52703182B001C2622 /* ExplainLifeApp.swift */; };
 		57ED53C82703182B001C2622 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ED53C72703182B001C2622 /* ContentView.swift */; };
 		57ED53CA2703182D001C2622 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57ED53C92703182D001C2622 /* Assets.xcassets */; };
@@ -55,6 +58,9 @@
 		57853A1127157CB300499FE9 /* SwiftUISpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUISpeech.swift; sourceTree = "<group>"; };
 		57993DF4271597BB0061AE72 /* AnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisView.swift; sourceTree = "<group>"; };
 		57C044A02703A49100573195 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		57C4A19C271F6F9B0037A094 /* toneDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toneDataModel.swift; sourceTree = "<group>"; };
+		57C4A19F271F700E0037A094 /* SentenceToneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceToneView.swift; sourceTree = "<group>"; };
+		57C4A1A2271F71010037A094 /* AnalyzeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeText.swift; sourceTree = "<group>"; };
 		57ED53C22703182B001C2622 /* ExplainLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExplainLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57ED53C52703182B001C2622 /* ExplainLifeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainLifeApp.swift; sourceTree = "<group>"; };
 		57ED53C72703182B001C2622 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -273,6 +279,40 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		57C4A194271EBCEB0037A094 /* AI */ = {
+			isa = PBXGroup;
+			children = (
+				57C4A1A1271F70ED0037A094 /* AnalyzeText */,
+				57C4A19E271F6FF70037A094 /* SentenceTone */,
+				57C4A197271ED2670037A094 /* Model */,
+			);
+			path = AI;
+			sourceTree = "<group>";
+		};
+		57C4A197271ED2670037A094 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				57C4A19C271F6F9B0037A094 /* toneDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		57C4A19E271F6FF70037A094 /* SentenceTone */ = {
+			isa = PBXGroup;
+			children = (
+				57C4A19F271F700E0037A094 /* SentenceToneView.swift */,
+			);
+			path = SentenceTone;
+			sourceTree = "<group>";
+		};
+		57C4A1A1271F70ED0037A094 /* AnalyzeText */ = {
+			isa = PBXGroup;
+			children = (
+				57C4A1A2271F71010037A094 /* AnalyzeText.swift */,
+			);
+			path = AnalyzeText;
+			sourceTree = "<group>";
+		};
 		57ED53B92703182B001C2622 = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +335,7 @@
 		57ED53C42703182B001C2622 /* ExplainLife */ = {
 			isa = PBXGroup;
 			children = (
+				57C4A194271EBCEB0037A094 /* AI */,
 				5714BC55270B0CF20061B37C /* Launch */,
 				5714BC41270AFF5A0061B37C /* Views */,
 				57C0449F2703A3D800573195 /* Model */,
@@ -462,10 +503,12 @@
 				5714BC54270B0C460061B37C /* MainView.swift in Sources */,
 				5714BC51270B0BEF0061B37C /* SignInView.swift in Sources */,
 				57853A1227157CB300499FE9 /* SwiftUISpeech.swift in Sources */,
+				57C4A19D271F6F9B0037A094 /* toneDataModel.swift in Sources */,
 				5714BC5C270B82F60061B37C /* TabButton.swift in Sources */,
 				57C044A12703A49100573195 /* Item.swift in Sources */,
 				57ED53C62703182B001C2622 /* ExplainLifeApp.swift in Sources */,
 				5714BC47270B09D20061B37C /* ItemView.swift in Sources */,
+				57C4A1A3271F71010037A094 /* AnalyzeText.swift in Sources */,
 				5714BC4F270B0BE60061B37C /* SignUpView.swift in Sources */,
 				5714BC59270B221D0061B37C /* ErrorView.swift in Sources */,
 				5714BC5F270B94E10061B37C /* SpeakView.swift in Sources */,
@@ -473,6 +516,7 @@
 				5714BC68270B97290061B37C /* ProfileView.swift in Sources */,
 				57993DF5271597BB0061AE72 /* AnalysisView.swift in Sources */,
 				5714BC65270B96FB0061B37C /* EmotionView.swift in Sources */,
+				57C4A1A0271F700E0037A094 /* SentenceToneView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

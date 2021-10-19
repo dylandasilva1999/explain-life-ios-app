@@ -7,11 +7,18 @@
 
 import SwiftUI
 import ToneAnalyzer
+import SwiftyJSON
+import Alamofire
 
 struct AnalysisView: View {
     
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var swiftUISpeech:SwiftUISpeech
+    @ObservedObject var analyzeText: AnalyzeText
+    
+    init(analyzeText: AnalyzeText) {
+        self.analyzeText = analyzeText
+    }
     
     var body: some View {
         VStack {
@@ -22,62 +29,30 @@ struct AnalysisView: View {
                 .frame(width: UIScreen.main.bounds.width - 95, height: 180)
                 .multilineTextAlignment(.leading)
             
-            VStack(spacing: 30) {
-                Button(action: {
-                    self.doToneAnalyzer()
-                }, label: {
-                    Text("view tone of sentence")
-                        .font(Font.custom("Aeonik-Regular", size: 25))
-                        .foregroundColor(Color("Navy Blue"))
-                        .padding(.vertical, 25)
-                })
-                    .frame(width: UIScreen.main.bounds.width - 80)
-                    .background(Color("Pastel Green"))
-                    .cornerRadius(20)
-                
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }, label: {
-                    Image(systemName: "clear")
-                        .font(.title2)
-                        .foregroundColor(Color("Navy Blue"))
-                        .padding(.top, 5)
-                        .padding(.trailing, 5)
-                    
-                    Text("dismiss modal")
-                        .font(Font.custom("Aeonik-Regular", size: 25))
-                        .foregroundColor(Color("Navy Blue"))
-                        .padding(.vertical, 25)
-                })
-                    .frame(width: UIScreen.main.bounds.width - 80)
-                    .background(Color("Pastel Orange"))
-                    .cornerRadius(20)
+            ForEach(analyzeText.toneData) { i in
+                SentenceToneView(name: i.toneName, score: i.toneScore)
             }
+            
+            Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }, label: {
+                Image(systemName: "clear")
+                    .font(.title2)
+                    .foregroundColor(Color("Navy Blue"))
+                    .padding(.top, 5)
+                    .padding(.trailing, 5)
+                
+                Text("dismiss modal")
+                    .font(Font.custom("Aeonik-Regular", size: 25))
+                    .foregroundColor(Color("Navy Blue"))
+                    .padding(.vertical, 25)
+            })
+                .frame(width: UIScreen.main.bounds.width - 80)
+                .background(Color("Pastel Orange"))
+                .cornerRadius(20)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: UIScreen.main.bounds.height)
         .background(Color("White"))
         .edgesIgnoringSafeArea(.all)
-    }
-    
-    //Function to analyse the analysis text input
-    func doToneAnalyzer() {
-        let authenticator = WatsonIAMAuthenticator(apiKey: "Hg2LSkfvwpVS3EfelDBMRUwXaLBQ_oYL-LDJem8hDD2P")
-        let toneAnalyzer = ToneAnalyzer(version: "2017-09-21", authenticator: authenticator)
-        toneAnalyzer.serviceURL = "https://api.au-syd.tone-analyzer.watson.cloud.ibm.com/instances/1956e6e2-d646-40cf-8bb5-33ad0ac7f322"
-        
-        let text = swiftUISpeech.analysisText
-        
-        toneAnalyzer.tone(
-          toneContent: .text(text))
-        {
-          response, error in
-
-          guard let toneAnalysis = response?.result else {
-            print(error as Any)
-            return
-          }
-
-          print(toneAnalysis)
-        }
     }
 }

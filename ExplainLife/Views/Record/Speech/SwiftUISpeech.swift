@@ -10,6 +10,11 @@ import SwiftUI
 import Foundation
 
 public class SwiftUISpeech: ObservableObject{
+    
+    /* Variables **/
+    @Published var isRecording : Bool = false
+    @Published var button = SpeechButton()
+    
     init(){
         //Requests auth from User
         SFSpeechRecognizer.requestAuthorization{ authStatus in
@@ -133,10 +138,6 @@ public class SwiftUISpeech: ObservableObject{
         }// end of switch
         
     }// end of get speech status
-    
-    /* Variables **/
-    @Published var isRecording : Bool = false
-    @Published var button = SpeechButton()
     
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))
     private var recognitionRequest : SFSpeechAudioBufferRecognitionRequest?

@@ -90,7 +90,9 @@ struct RecordView: View {
             .frame(width: UIScreen.main.bounds.width - 80)
             .background(Color("Pastel Purple"))
             .cornerRadius(20)
-            .fullScreenCover(isPresented: $isPresented, content: AnalysisView.init)
+            .fullScreenCover(isPresented: $isPresented) {
+                AnalysisView(analyzeText: AnalyzeText(swiftUISpeechText: self.swiftUISpeech)).environmentObject(SwiftUISpeech())
+            }
         }
         .frame(height: UIScreen.main.bounds.height - 200)
     }
