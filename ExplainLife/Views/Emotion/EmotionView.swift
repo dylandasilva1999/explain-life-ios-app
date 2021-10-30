@@ -64,7 +64,7 @@ struct EmotionView: View {
                         }
                     }
                     .frame(width: UIScreen.main.bounds.width/2.65)
-                    .background(Color("Muted Pastel Orange"))
+                    .background(Color("Joy"))
                     .cornerRadius(30)
                     
                     //Trust Button
@@ -90,7 +90,7 @@ struct EmotionView: View {
                         }
                     }
                     .frame(width: UIScreen.main.bounds.width/2.65)
-                    .background(Color("Muted Pastel Orange"))
+                    .background(Color("Trust"))
                     .cornerRadius(30)
                 }
                 //Fear and Surprise Buttons
@@ -118,7 +118,7 @@ struct EmotionView: View {
                         }
                     }
                     .frame(width: UIScreen.main.bounds.width/2.65)
-                    .background(Color("Muted Pastel Orange"))
+                    .background(Color("Fear"))
                     .cornerRadius(30)
                     
                     //Surprise Button
@@ -144,7 +144,7 @@ struct EmotionView: View {
                         }
                     }
                     .frame(width: UIScreen.main.bounds.width/2.65)
-                    .background(Color("Muted Pastel Orange"))
+                    .background(Color("Surprise"))
                     .cornerRadius(30)
                 }
                 //Sadness and Disgust Buttons
@@ -172,7 +172,7 @@ struct EmotionView: View {
                         }
                     }
                     .frame(width: UIScreen.main.bounds.width/2.65)
-                    .background(Color("Muted Pastel Orange"))
+                    .background(Color("Sadness"))
                     .cornerRadius(30)
                     
                     //Disgust Button
@@ -198,7 +198,7 @@ struct EmotionView: View {
                         }
                     }
                     .frame(width: UIScreen.main.bounds.width/2.65)
-                    .background(Color("Muted Pastel Orange"))
+                    .background(Color("Disgust"))
                     .cornerRadius(30)
                 }
                 //Anger and Anticipation Buttons
@@ -226,7 +226,7 @@ struct EmotionView: View {
                         }
                     }
                     .frame(width: UIScreen.main.bounds.width/2.65)
-                    .background(Color("Muted Pastel Orange"))
+                    .background(Color("Anger"))
                     .cornerRadius(30)
                     
                     //Anticipation Button
@@ -252,7 +252,7 @@ struct EmotionView: View {
                         }
                     }
                     .frame(width: UIScreen.main.bounds.width/2.65)
-                    .background(Color("Muted Pastel Orange"))
+                    .background(Color("Anticipation"))
                     .cornerRadius(30)
                 }
             }
