@@ -10,7 +10,8 @@ import AVFoundation
 
 struct SpeakView: View {
     
-    @State var text = "type here..."
+    @State var text = ""
+    @State var didStartEditing = false
     
     var body: some View {
         VStack(spacing: 40) {
@@ -35,9 +36,9 @@ struct SpeakView: View {
                     content: { Text("type in the textbox below what you want to say and hit the say out loud button at the bottom.")
                             .font(Font.custom("Aeonik-Regular", size: 18))
                             .foregroundColor(Color("Navy Blue"))
-                })
-                .cornerRadius(20)
-                .groupBoxStyle(TransparentGroupBoxSpeak())
+                    })
+                    .cornerRadius(20)
+                    .groupBoxStyle(TransparentGroupBoxSpeak())
             }
             .frame(width: UIScreen.main.bounds.width - 80)
             
@@ -49,9 +50,13 @@ struct SpeakView: View {
                     .frame(width: UIScreen.main.bounds.width - 80)
                     .multilineTextAlignment(.leading)
                 
+                
                 //Text Area input
-                TextArea(text: $text)
+                TextArea(text: $text, didStartEditing: $didStartEditing)
                     .frame(width: UIScreen.main.bounds.width - 80, height: 250)
+                    .onTapGesture {
+                        didStartEditing = true
+                    }
             }
             
             Spacer()
@@ -65,8 +70,6 @@ struct SpeakView: View {
                 
                 let synthesizer = AVSpeechSynthesizer()
                 synthesizer.speak(utterance)
-                
-                //text = "type here..."
             }) {
                 Image("speak")
                     .font(.title)
@@ -107,22 +110,31 @@ struct TransparentGroupBoxSpeak: GroupBoxStyle {
 //TextArea Input
 struct TextArea: UIViewRepresentable {
     @Binding var text: String
+    @Binding var didStartEditing: Bool
     
     func makeUIView(context: Context) -> UITextView {
         let myTextArea = UITextView()
         myTextArea.delegate = context.coordinator
         myTextArea.font = UIFont(name: "Aeonik-Regular", size: 22)
-        //myTextArea.backgroundColor = UIColor(Color("Muted Pastel Green"))
         myTextArea.layer.borderWidth = 3.0
         myTextArea.layer.cornerRadius = 20
         myTextArea.layer.borderColor = UIColor(Color("Pastel Green")).cgColor
         myTextArea.contentInset = UIEdgeInsets(top: 20, left: 25, bottom: 25, right: 25)
+        myTextArea.isSelectable = true
+        myTextArea.isUserInteractionEnabled = true
         
         return myTextArea
     }
     
     func updateUIView(_ uiView: UITextView, context: Context) {
-        uiView.text = text
+        if didStartEditing {
+            uiView.textColor = UIColor(Color("Navy Blue"))
+            uiView.text = text
+        }
+        else {
+            uiView.text = "enter your sentence here..."
+            uiView.textColor = UIColor(Color("Navy Blue"))
+        }
     }
     
     func makeCoordinator() -> Coordinator {
