@@ -29,7 +29,6 @@ class AuthService {
             
             guard let userId = authData?.user.uid else {return}
             
-            //Add user data to Firebase with FirestoreService
             FirestoreService.addNewUser(uid: userId, fullname: fullname, email: email)
             onSuccess(userId)
         }

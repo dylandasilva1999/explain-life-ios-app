@@ -21,6 +21,8 @@
 		5714BC6B270B97460061B37C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5714BC6A270B97460061B37C /* SettingsView.swift */; };
 		572181AD272D504D002AADE3 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572181AC272D504D002AADE3 /* AuthService.swift */; };
 		572181AF272D52E2002AADE3 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572181AE272D52E2002AADE3 /* FirestoreService.swift */; };
+		572181B2272D8158002AADE3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572181B1272D8158002AADE3 /* User.swift */; };
+		572181B4272D8381002AADE3 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572181B3272D8381002AADE3 /* ProfileService.swift */; };
 		57853A0F27157C5600499FE9 /* SpeechButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57853A0E27157C5600499FE9 /* SpeechButton.swift */; };
 		57853A1227157CB300499FE9 /* SwiftUISpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57853A1127157CB300499FE9 /* SwiftUISpeech.swift */; };
 		57993DF5271597BB0061AE72 /* AnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57993DF4271597BB0061AE72 /* AnalysisView.swift */; };
@@ -58,6 +60,8 @@
 		5714BC6A270B97460061B37C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		572181AC272D504D002AADE3 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		572181AE272D52E2002AADE3 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		572181B1272D8158002AADE3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		572181B3272D8381002AADE3 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		57853A0E27157C5600499FE9 /* SpeechButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechButton.swift; sourceTree = "<group>"; };
 		57853A1127157CB300499FE9 /* SwiftUISpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUISpeech.swift; sourceTree = "<group>"; };
 		57993DF4271597BB0061AE72 /* AnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisView.swift; sourceTree = "<group>"; };
@@ -256,8 +260,17 @@
 			children = (
 				572181AC272D504D002AADE3 /* AuthService.swift */,
 				572181AE272D52E2002AADE3 /* FirestoreService.swift */,
+				572181B3272D8381002AADE3 /* ProfileService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		572181B0272D814E002AADE3 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				572181B1272D8158002AADE3 /* User.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		57853A0D27157C2E00499FE9 /* SpeechButton */ = {
@@ -287,6 +300,7 @@
 		57C0449F2703A3D800573195 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				572181B0272D814E002AADE3 /* User */,
 				5714BC56270B0D100061B37C /* Onboarding */,
 			);
 			path = Model;
@@ -519,6 +533,7 @@
 				572181AD272D504D002AADE3 /* AuthService.swift in Sources */,
 				5714BC51270B0BEF0061B37C /* SignInView.swift in Sources */,
 				57853A1227157CB300499FE9 /* SwiftUISpeech.swift in Sources */,
+				572181B4272D8381002AADE3 /* ProfileService.swift in Sources */,
 				57C4A19D271F6F9B0037A094 /* toneDataModel.swift in Sources */,
 				5714BC5C270B82F60061B37C /* TabButton.swift in Sources */,
 				57C044A12703A49100573195 /* Item.swift in Sources */,
@@ -530,6 +545,7 @@
 				5714BC5F270B94E10061B37C /* SpeakView.swift in Sources */,
 				5714BC49270B0A2E0061B37C /* OnboardingScreenView.swift in Sources */,
 				5714BC68270B97290061B37C /* ProfileView.swift in Sources */,
+				572181B2272D8158002AADE3 /* User.swift in Sources */,
 				57993DF5271597BB0061AE72 /* AnalysisView.swift in Sources */,
 				5714BC65270B96FB0061B37C /* EmotionView.swift in Sources */,
 				57C4A1A0271F700E0037A094 /* SentenceToneView.swift in Sources */,

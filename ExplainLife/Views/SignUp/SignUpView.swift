@@ -65,7 +65,7 @@ struct SignUpView: View {
                                 .foregroundColor(Color("Navy Blue"))
                             
                             //Email input field
-                            TextField("fullname", text: self.$fullname)
+                            TextField("full name", text: self.$fullname)
                                 .autocapitalization(.none)
                                 .font(Font.custom("Aeonik-Regular", size: 20))
                                 .foregroundColor(Color("Navy Blue"))
