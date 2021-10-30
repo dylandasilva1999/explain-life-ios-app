@@ -21,7 +21,7 @@ struct SpeechButton: View {
             if(self.swiftUISpeech.getSpeechStatus() == "Denied - Close the App"){// checks status of auth if no auth pop up error
                 self.actionPop.toggle()
             }else{
-                withAnimation(.spring(response: 0.4, dampingFraction: 0.3, blendDuration: 0.3)){self.swiftUISpeech.isRecording.toggle()}// button animation
+                withAnimation(.spring(response: 0.3, dampingFraction: 0.3, blendDuration: 0.2)){self.swiftUISpeech.isRecording.toggle()}// button animation
                 self.swiftUISpeech.isRecording ? self.swiftUISpeech.startRecording() : self.swiftUISpeech.stopRecording()
             }
         }){
@@ -34,7 +34,7 @@ struct SpeechButton: View {
                     .background(swiftUISpeech.isRecording ? Circle().foregroundColor(Color("Pastel Green")).frame(width: 85, height: 85) : Circle().foregroundColor(Color("Pastel Purple")).frame(width: 70, height: 70))
                 
                 VStack {
-                    Text("Click to record")
+                    Text(swiftUISpeech.isRecording ? "Recording" : "Click to record")
                         .font(Font.custom("Aeonik-Regular", size: 22))
                         .foregroundColor(Color("Navy Blue"))
                         .padding(.leading, 30)

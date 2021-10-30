@@ -205,7 +205,7 @@ struct EmotionView: View {
                 HStack(spacing: 20) {
                     //Anger Button
                     Button(action: {
-                        let utterance = AVSpeechUtterance(string: "I am angry ggggrrr")
+                        let utterance = AVSpeechUtterance(string: "I am angry")
                         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
                         
                         utterance.rate = 0.5
@@ -252,7 +252,7 @@ struct EmotionView: View {
                         }
                     }
                     .frame(width: UIScreen.main.bounds.width/2.65)
-                    .background(Color("Anticipation"))
+                    .background(Color("Muted Pastel Orange"))
                     .cornerRadius(30)
                 }
             }
