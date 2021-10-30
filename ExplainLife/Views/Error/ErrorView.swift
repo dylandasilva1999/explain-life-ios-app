@@ -26,7 +26,7 @@ struct ErrorView: View {
                 .padding(.horizontal, 30)
                 .padding(.vertical, 5)
                 
-                HStack {
+                HStack() {
                     Text(self.error == "RESET" ? "A password reset link has been sent to your inbox" : self.error)
                         .font(Font.custom("Aeonik-Regular", size: 20))
                         .foregroundColor(Color("Navy Blue"))
@@ -35,7 +35,7 @@ struct ErrorView: View {
                     Spacer()
                 }
                 .padding(.top)
-                .padding(.horizontal, 30)
+                .frame(width: UIScreen.main.bounds.width - 125)
                 
                 Button(action: {
                     self.alert.toggle()
@@ -53,10 +53,10 @@ struct ErrorView: View {
             .padding(.vertical, 25)
             .frame(width: UIScreen.main.bounds.width - 70)
             .background(Color("White"))
-            .cornerRadius(20)
+            .cornerRadius(30)
             .position(x: UIScreen.main.bounds.width/2, y:UIScreen.main.bounds.height/2.2)
         }
-        .background(Color.black.opacity(0.35).edgesIgnoringSafeArea(.all))
+        .background(Color.black.opacity(0.4).edgesIgnoringSafeArea(.all))
     }
     
 }

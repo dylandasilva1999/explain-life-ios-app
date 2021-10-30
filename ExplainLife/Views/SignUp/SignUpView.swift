@@ -12,6 +12,7 @@ struct SignUpView: View {
     
     @State var color = Color("Navy Blue")
     @State var email = ""
+    @State var username = ""
     @State var password = ""
     @State var retypePassword = ""
     @State var visible = false
@@ -65,6 +66,17 @@ struct SignUpView: View {
                                 .foregroundColor(Color("Navy Blue"))
                             
                             //Email input field
+                            TextField("username", text: self.$username)
+                                .autocapitalization(.none)
+                                .font(Font.custom("Aeonik-Regular", size: 20))
+                                .foregroundColor(Color("Navy Blue"))
+                                .padding(20)
+                                .foregroundColor(.white)
+                                .background(RoundedRectangle(cornerRadius: 12).stroke(self.username != "" ? Color("Pastel Green") : self.color, lineWidth: 3))
+                                .padding(.top, 15)
+                                .preferredColorScheme(.light)
+                            
+                            //Email input field
                             TextField("email", text: self.$email)
                                 .autocapitalization(.none)
                                 .font(Font.custom("Aeonik-Regular", size: 20))
@@ -72,7 +84,7 @@ struct SignUpView: View {
                                 .padding(20)
                                 .foregroundColor(.white)
                                 .background(RoundedRectangle(cornerRadius: 12).stroke(self.email != "" ? Color("Pastel Green") : self.color, lineWidth: 3))
-                                .padding(.top, 30)
+                                .padding(.top, 20)
                                 .preferredColorScheme(.light)
                             
                             HStack(spacing: 15) {
@@ -104,37 +116,6 @@ struct SignUpView: View {
                             }
                             .padding(20)
                             .background(RoundedRectangle(cornerRadius: 12).stroke(self.password != "" ? Color("Pastel Green") : self.color, lineWidth: 3))
-                            .padding(.top, 20)
-                            
-                            HStack(spacing: 15) {
-                                VStack {
-                                    if self.retypeVisible {
-                                        //Re-enter Password input field
-                                        TextField("re-enter password", text: self.$retypePassword)
-                                            .font(Font.custom("Aeonik-Regular", size: 20))
-                                            .foregroundColor(Color("Navy Blue"))
-                                            .preferredColorScheme(.light)
-                                            .autocapitalization(.none)
-                                    } else  {
-                                        SecureField("re-enter password", text: self.$retypePassword)
-                                            .font(Font.custom("Aeonik-Regular", size: 20))
-                                            .foregroundColor(Color("Navy Blue"))
-                                            .preferredColorScheme(.light)
-                                            .autocapitalization(.none)
-                                    }
-                                }
-                                
-                                //Show re-enter password icon
-                                Button (action: {
-                                    self.retypeVisible.toggle()
-                                }) {
-                                    Image(systemName: self.retypeVisible ? "eye.slash.fill" : "eye.fill")
-                                        .foregroundColor(Color("Navy Blue"))
-                                }
-                                    
-                            }
-                            .padding(20)
-                            .background(RoundedRectangle(cornerRadius: 12).stroke(self.retypePassword != "" ? Color("Pastel Green") : self.color, lineWidth: 3))
                             .padding(.top, 20)
                             
                             //Sign Up Button
