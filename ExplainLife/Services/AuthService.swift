@@ -11,6 +11,8 @@ import FirebaseAuth
 
 class AuthService {
     
+    @Published var isLoading = false
+    
     //Instance of Firebase Auth
     static var auth = Auth.auth()
     

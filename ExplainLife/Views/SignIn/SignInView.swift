@@ -17,6 +17,7 @@ struct SignInView: View {
     @Binding var show: Bool
     @State var alert = false
     @State var error = ""
+    @State var isLoading = false
     
     var body: some View {
         ZStack {
@@ -118,19 +119,24 @@ struct SignInView: View {
                             }
                             .padding(.top, 12)
                             
-                            //Sign In Button
-                            Button(action: {
-                                self.signIn()
-                            }) {
-                                Text("sign in")
-                                    .font(Font.custom("Aeonik-Regular", size: 25))
-                                    .foregroundColor(Color("Navy Blue"))
-                                    .padding(.vertical, 25)
-                                    .frame(width: UIScreen.main.bounds.width - 80)
+                            if isLoading {
+                                ProgressView()
+                                    .padding()
+                            } else {
+                                //Sign In Button
+                                Button(action: {
+                                    self.signIn()
+                                }) {
+                                    Text("sign in")
+                                        .font(Font.custom("Aeonik-Regular", size: 25))
+                                        .foregroundColor(Color("Navy Blue"))
+                                        .padding(.vertical, 25)
+                                        .frame(width: UIScreen.main.bounds.width - 80)
+                                }
+                                .background(Color("Pastel Green"))
+                                .cornerRadius(20)
+                                .padding(.top, 40)
                             }
-                            .background(Color("Pastel Green"))
-                            .cornerRadius(20)
-                            .padding(.top, 40)
                         }
                         .padding(.top, 30)
                         .padding(.leading, 10)
@@ -154,8 +160,11 @@ struct SignInView: View {
     
     //Sign in and verify user information
     func signIn() {
+        self.isLoading = true
+        
         if self.email != "" && self.password != "" {
             AuthService.signIn(email: email, password: password, onSuccess: { (user) in
+                self.isLoading = false
                 self.clear()
             }, onError: { (errorMessage) in
                 self.error = errorMessage
@@ -167,12 +176,15 @@ struct SignInView: View {
             NotificationCenter.default.post(name: NSNotification.Name("status"), object: nil)
         } else if self.email == "" && self.password != "" {
             self.error = "Please fill in your email."
+            self.isLoading = false
             self.alert.toggle()
         } else if self.password == "" && self.email != "" { 
             self.error = "Please fill in your password."
+            self.isLoading = false
             self.alert.toggle()
         } else {
             self.error = "Please fill in all your information."
+            self.isLoading = false
             self.alert.toggle()
         }
     }

@@ -29,7 +29,7 @@ struct ProfileView: View {
                 }
                 //Custom Groupbox
                 GroupBox(
-                    content: { Text("edit your username or email address by clicking on the pen icon next to each field.")
+                    content: { Text("edit your fullname or email address by clicking on the pen icon next to each field.")
                             .font(Font.custom("Aeonik-Regular", size: 18))
                             .foregroundColor(Color("Navy Blue"))
                 })

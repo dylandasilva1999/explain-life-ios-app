@@ -14,12 +14,11 @@ struct SignUpView: View {
     @State var email = ""
     @State var fullname = ""
     @State var password = ""
-    @State var retypePassword = ""
     @State var visible = false
-    @State var retypeVisible = false
     @Binding var show: Bool
     @State var alert = false
     @State var error = ""
+    @State var isLoading = false
     
     var body: some View {
         ZStack {
@@ -117,19 +116,27 @@ struct SignUpView: View {
                             .background(RoundedRectangle(cornerRadius: 12).stroke(self.password != "" ? Color("Pastel Green") : self.color, lineWidth: 3))
                             .padding(.top, 20)
                             
-                            //Sign Up Button
-                            Button(action: {
-                                self.signUp()
-                            }) {
-                                Text("sign up")
-                                    .font(Font.custom("Aeonik-Regular", size: 25))
-                                    .foregroundColor(Color("Navy Blue"))
-                                    .padding(.vertical, 25)
-                                    .frame(width: UIScreen.main.bounds.width - 80)
+                            if isLoading {
+                                ProgressView()
+                                    .padding(.top, 70)
+                                    .progressViewStyle(CircularProgressViewStyle(tint: Color("Pastel Green")))
+                                    .frame(width: UIScreen.main.bounds.width - 80, height: 30)
+                                    .scaleEffect(x: 1.6, y: 1.6, anchor: .center)
+                            } else {
+                                //Sign Up Button
+                                Button(action: {
+                                    self.signUp()
+                                }) {
+                                    Text("sign up")
+                                        .font(Font.custom("Aeonik-Regular", size: 25))
+                                        .foregroundColor(Color("Navy Blue"))
+                                        .padding(.vertical, 25)
+                                        .frame(width: UIScreen.main.bounds.width - 80)
+                                }
+                                .background(Color("Pastel Green"))
+                                .cornerRadius(20)
+                                .padding(.top, 40)
                             }
-                            .background(Color("Pastel Green"))
-                            .cornerRadius(20)
-                            .padding(.top, 40)
                         }
                         .padding(.top, 10)
                         .padding(.leading, 10)
@@ -157,8 +164,11 @@ struct SignUpView: View {
     
     //Sign up and verify user information
     func signUp() {
+        self.isLoading = true
+        
         if self.email != "" && self.password != "" && self.fullname != "" {
             AuthService.signUp(fullname: fullname, email: email, password: password, onSuccess: { (user) in
+                self.isLoading = false
                 self.clear()
             }, onError: { (errorMessage) in
                 self.error = errorMessage
@@ -167,21 +177,27 @@ struct SignUpView: View {
             })
         } else if self.email == "" && self.password != "" && self.fullname == "" {
             self.error = "Please enter in your fullname and email."
+            self.isLoading = false
             self.alert.toggle()
         } else if self.email != "" && self.password != "" && self.fullname == "" {
             self.error = "Please enter in your fullname."
+            self.isLoading = false
             self.alert.toggle()
         } else if self.email == "" && self.password == "" && self.fullname != "" {
             self.error = "Please enter in your email and your password."
+            self.isLoading = false
             self.alert.toggle()
         } else if self.email != "" && self.password == "" && self.fullname == "" {
             self.error = "Please enter in your fullname and your password."
+            self.isLoading = false
             self.alert.toggle()
         } else if self.email != "" && self.password == "" && self.fullname != "" {
             self.error = "Please enter your password."
+            self.isLoading = false
             self.alert.toggle()
         } else {
             self.error = "Please fill in all your information."
+            self.isLoading = false
             self.alert.toggle()
         }
     }
