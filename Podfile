@@ -10,6 +10,8 @@ target 'ExplainLife' do
   # add the Firebase pod for Google Analytics
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Firestore'
 
   pod 'IBMWatsonToneAnalyzerV3', '~> 4.3.0'
 

@@ -12,7 +12,7 @@ struct SignUpView: View {
     
     @State var color = Color("Navy Blue")
     @State var email = ""
-    @State var username = ""
+    @State var fullname = ""
     @State var password = ""
     @State var retypePassword = ""
     @State var visible = false
@@ -66,13 +66,13 @@ struct SignUpView: View {
                                 .foregroundColor(Color("Navy Blue"))
                             
                             //Email input field
-                            TextField("username", text: self.$username)
+                            TextField("fullname", text: self.$fullname)
                                 .autocapitalization(.none)
                                 .font(Font.custom("Aeonik-Regular", size: 20))
                                 .foregroundColor(Color("Navy Blue"))
                                 .padding(20)
                                 .foregroundColor(.white)
-                                .background(RoundedRectangle(cornerRadius: 12).stroke(self.username != "" ? Color("Pastel Green") : self.color, lineWidth: 3))
+                                .background(RoundedRectangle(cornerRadius: 12).stroke(self.fullname != "" ? Color("Pastel Green") : self.color, lineWidth: 3))
                                 .padding(.top, 15)
                                 .preferredColorScheme(.light)
                             
@@ -112,7 +112,6 @@ struct SignUpView: View {
                                     Image(systemName: self.visible ? "eye.slash.fill" : "eye.fill")
                                         .foregroundColor(Color("Navy Blue"))
                                 }
-                                    
                             }
                             .padding(20)
                             .background(RoundedRectangle(cornerRadius: 12).stroke(self.password != "" ? Color("Pastel Green") : self.color, lineWidth: 3))
