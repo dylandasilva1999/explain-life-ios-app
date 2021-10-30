@@ -64,6 +64,8 @@ struct AnalysisView: View {
                         .foregroundColor(Color("Navy Blue"))
                         .frame(width: UIScreen.main.bounds.width - 80)
                         .multilineTextAlignment(.leading)
+                    
+                    Spacer()
                 }
                 .frame(width: UIScreen.main.bounds.width - 80, height: UIScreen.main.bounds.height - 720)
                 .padding(.top, 30)
