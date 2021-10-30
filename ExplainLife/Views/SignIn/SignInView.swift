@@ -98,7 +98,7 @@ struct SignInView: View {
                                     Image(systemName: self.visible ? "eye.slash.fill" : "eye.fill")
                                         .foregroundColor(Color("Navy Blue"))
                                 }
-                                    
+                                
                             }
                             .padding(20)
                             .background(RoundedRectangle(cornerRadius: 12).stroke(self.password != "" ? Color("Pastel Green") : self.color, lineWidth: 3))
@@ -120,7 +120,7 @@ struct SignInView: View {
                             
                             //Sign In Button
                             Button(action: {
-                                self.verify()
+                                self.signIn()
                             }) {
                                 Text("sign in")
                                     .font(Font.custom("Aeonik-Regular", size: 25))
@@ -146,18 +146,25 @@ struct SignInView: View {
         }
     }
     
-    func verify() {
+    //Function to clear input fields on success
+    func clear() {
+        self.email = ""
+        self.password = ""
+    }
+    
+    //Sign in and verify user information
+    func signIn() {
         if self.email != "" && self.password != "" {
-            Auth.auth().signIn(withEmail: self.email, password: self.password) { (res, err) in
-                if err != nil {
-                    self.error = err!.localizedDescription
-                    self.alert.toggle()
-                    return
-                }
-                
-                UserDefaults.standard.set(true, forKey: "status")
-                NotificationCenter.default.post(name: NSNotification.Name("status"), object: nil)
-            }
+            AuthService.signIn(email: email, password: password, onSuccess: { (user) in
+                self.clear()
+            }, onError: { (errorMessage) in
+                self.error = errorMessage
+                self.alert.toggle()
+                return
+            })
+            
+            UserDefaults.standard.set(true, forKey: "status")
+            NotificationCenter.default.post(name: NSNotification.Name("status"), object: nil)
         } else if self.email == "" && self.password != "" {
             self.error = "Please fill in your email."
             self.alert.toggle()
@@ -170,6 +177,7 @@ struct SignInView: View {
         }
     }
     
+    //Reset password function
     func resetPassword() {
         if self.email != "" {
             Auth.auth().sendPasswordReset(withEmail: self.email) { (err) in

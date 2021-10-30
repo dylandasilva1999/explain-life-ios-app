@@ -148,12 +148,14 @@ struct SignUpView: View {
         }
     }
     
+    //Function to clear input fields on success
     func clear() {
         self.email = ""
         self.fullname = ""
         self.password = ""
     }
     
+    //Sign up and verify user information
     func signUp() {
         if self.email != "" && self.password != "" && self.fullname != "" {
             AuthService.signUp(fullname: fullname, email: email, password: password, onSuccess: { (user) in
