@@ -19,6 +19,8 @@
 		5714BC65270B96FB0061B37C /* EmotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5714BC64270B96FB0061B37C /* EmotionView.swift */; };
 		5714BC68270B97290061B37C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5714BC67270B97290061B37C /* ProfileView.swift */; };
 		5714BC6B270B97460061B37C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5714BC6A270B97460061B37C /* SettingsView.swift */; };
+		572181AD272D504D002AADE3 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572181AC272D504D002AADE3 /* AuthService.swift */; };
+		572181AF272D52E2002AADE3 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572181AE272D52E2002AADE3 /* FirestoreService.swift */; };
 		57853A0F27157C5600499FE9 /* SpeechButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57853A0E27157C5600499FE9 /* SpeechButton.swift */; };
 		57853A1227157CB300499FE9 /* SwiftUISpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57853A1127157CB300499FE9 /* SwiftUISpeech.swift */; };
 		57993DF5271597BB0061AE72 /* AnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57993DF4271597BB0061AE72 /* AnalysisView.swift */; };
@@ -54,6 +56,8 @@
 		5714BC64270B96FB0061B37C /* EmotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionView.swift; sourceTree = "<group>"; };
 		5714BC67270B97290061B37C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		5714BC6A270B97460061B37C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		572181AC272D504D002AADE3 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		572181AE272D52E2002AADE3 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		57853A0E27157C5600499FE9 /* SpeechButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechButton.swift; sourceTree = "<group>"; };
 		57853A1127157CB300499FE9 /* SwiftUISpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUISpeech.swift; sourceTree = "<group>"; };
 		57993DF4271597BB0061AE72 /* AnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisView.swift; sourceTree = "<group>"; };
@@ -247,6 +251,15 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		572181AB272D5031002AADE3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				572181AC272D504D002AADE3 /* AuthService.swift */,
+				572181AE272D52E2002AADE3 /* FirestoreService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		57853A0D27157C2E00499FE9 /* SpeechButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,6 +352,7 @@
 				5714BC55270B0CF20061B37C /* Launch */,
 				5714BC41270AFF5A0061B37C /* Views */,
 				57C0449F2703A3D800573195 /* Model */,
+				572181AB272D5031002AADE3 /* Services */,
 				57ED53DC270370E8001C2622 /* Fonts */,
 				57ED53E3270372DB001C2622 /* Info.plist */,
 				57ED53D3270357C8001C2622 /* GoogleService-Info.plist */,
@@ -501,6 +515,8 @@
 				57ED53C82703182B001C2622 /* ContentView.swift in Sources */,
 				5714BC62270B95F80061B37C /* RecordView.swift in Sources */,
 				5714BC54270B0C460061B37C /* MainView.swift in Sources */,
+				572181AF272D52E2002AADE3 /* FirestoreService.swift in Sources */,
+				572181AD272D504D002AADE3 /* AuthService.swift in Sources */,
 				5714BC51270B0BEF0061B37C /* SignInView.swift in Sources */,
 				57853A1227157CB300499FE9 /* SwiftUISpeech.swift in Sources */,
 				57C4A19D271F6F9B0037A094 /* toneDataModel.swift in Sources */,

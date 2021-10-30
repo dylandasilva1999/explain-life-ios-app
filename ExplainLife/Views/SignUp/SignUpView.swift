@@ -119,7 +119,7 @@ struct SignUpView: View {
                             
                             //Sign Up Button
                             Button(action: {
-                                self.register()
+                                self.signUp()
                             }) {
                                 Text("sign up")
                                     .font(Font.custom("Aeonik-Regular", size: 25))
@@ -148,31 +148,35 @@ struct SignUpView: View {
         }
     }
     
-    func register() {
-        if self.email != "" && self.password != "" && self.retypePassword != "" {
-            if self.password == self.retypePassword {
-                Auth.auth().createUser(withEmail: self.email, password: self.password) { (res, err) in
-                    if err != nil {
-                        self.error = err!.localizedDescription
-                        self.alert.toggle()
-                        return
-                    }
-                    
-                    UserDefaults.standard.set(true, forKey: "status")
-                    NotificationCenter.default.post(name: NSNotification.Name("status"), object: nil)
-                }
-            } else if self.password != self.retypePassword {
-                self.error = "Please make sure your passwords match."
+    func clear() {
+        self.email = ""
+        self.fullname = ""
+        self.password = ""
+    }
+    
+    func signUp() {
+        if self.email != "" && self.password != "" && self.fullname != "" {
+            AuthService.signUp(fullname: fullname, email: email, password: password, onSuccess: { (user) in
+                self.clear()
+            }, onError: { (errorMessage) in
+                self.error = errorMessage
                 self.alert.toggle()
-            }
-        } else if self.email == "" && self.password != "" && self.retypePassword == "" {
-            self.error = "Please re-enter your password and fill in your email."
+                return
+            })
+        } else if self.email == "" && self.password != "" && self.fullname == "" {
+            self.error = "Please enter in your fullname and email."
             self.alert.toggle()
-        } else if self.email != "" && self.password != "" && self.retypePassword == "" {
-            self.error = "Please re-enter your password."
+        } else if self.email != "" && self.password != "" && self.fullname == "" {
+            self.error = "Please enter in your fullname."
             self.alert.toggle()
-        } else if self.email != "" && self.password == "" && self.retypePassword == "" {
-            self.error = "Please fill in your password and re-enter your password."
+        } else if self.email == "" && self.password == "" && self.fullname != "" {
+            self.error = "Please enter in your email and your password."
+            self.alert.toggle()
+        } else if self.email != "" && self.password == "" && self.fullname == "" {
+            self.error = "Please enter in your fullname and your password."
+            self.alert.toggle()
+        } else if self.email != "" && self.password == "" && self.fullname != "" {
+            self.error = "Please enter your password."
             self.alert.toggle()
         } else {
             self.error = "Please fill in all your information."
