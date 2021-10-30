@@ -11,8 +11,6 @@ import FirebaseAuth
 
 class AuthService {
     
-    @Published var isLoading = false
-    
     //Instance of Firebase Auth
     static var auth = Auth.auth()
     
@@ -33,24 +31,6 @@ class AuthService {
             
             //Add user data to Firebase with FirestoreService
             FirestoreService.addNewUser(uid: userId, fullname: fullname, email: email)
-            onSuccess(userId)
-        }
-    }
-    
-    //SignIn function to sign in a user
-    static func signIn(email: String, password: String, onSuccess: @escaping (_ user: String) -> Void, onError: @escaping (_ errorMessage: String) -> Void) {
-        
-        //Sign in user with email and password
-        auth.signIn(withEmail: email, password: password) {
-            (authData, error) in
-            
-            //Error handling
-            if error != nil {
-                onError(error!.localizedDescription)
-                return
-            }
-            
-            guard let userId = authData?.user.uid else {return}
             onSuccess(userId)
         }
     }

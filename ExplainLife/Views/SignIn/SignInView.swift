@@ -121,7 +121,10 @@ struct SignInView: View {
                             
                             if isLoading {
                                 ProgressView()
-                                    .padding()
+                                    .padding(.top, 70)
+                                    .progressViewStyle(CircularProgressViewStyle(tint: Color("Pastel Green")))
+                                    .frame(width: UIScreen.main.bounds.width - 80, height: 30)
+                                    .scaleEffect(x: 1.6, y: 1.6, anchor: .center)
                             } else {
                                 //Sign In Button
                                 Button(action: {
@@ -163,22 +166,22 @@ struct SignInView: View {
         self.isLoading = true
         
         if self.email != "" && self.password != "" {
-            AuthService.signIn(email: email, password: password, onSuccess: { (user) in
-                self.isLoading = false
-                self.clear()
-            }, onError: { (errorMessage) in
-                self.error = errorMessage
-                self.alert.toggle()
-                return
-            })
-            
-            UserDefaults.standard.set(true, forKey: "status")
-            NotificationCenter.default.post(name: NSNotification.Name("status"), object: nil)
+            Auth.auth().signIn(withEmail: self.email, password: self.password) { (res, err) in
+                if err != nil {
+                    self.error = err!.localizedDescription
+                    self.alert.toggle()
+                    self.isLoading = false
+                    return
+                }
+                
+                UserDefaults.standard.set(true, forKey: "status")
+                NotificationCenter.default.post(name: NSNotification.Name("status"), object: nil)
+            }
         } else if self.email == "" && self.password != "" {
             self.error = "Please fill in your email."
             self.isLoading = false
             self.alert.toggle()
-        } else if self.password == "" && self.email != "" { 
+        } else if self.password == "" && self.email != "" {
             self.error = "Please fill in your password."
             self.isLoading = false
             self.alert.toggle()
