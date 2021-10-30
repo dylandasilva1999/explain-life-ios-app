@@ -74,6 +74,7 @@ struct SignUpView: View {
                                 .background(RoundedRectangle(cornerRadius: 12).stroke(self.fullname != "" ? Color("Pastel Green") : self.color, lineWidth: 3))
                                 .padding(.top, 15)
                                 .preferredColorScheme(.light)
+                                .disableAutocorrection(true)
                             
                             //Email input field
                             TextField("email", text: self.$email)
@@ -85,6 +86,7 @@ struct SignUpView: View {
                                 .background(RoundedRectangle(cornerRadius: 12).stroke(self.email != "" ? Color("Pastel Green") : self.color, lineWidth: 3))
                                 .padding(.top, 20)
                                 .preferredColorScheme(.light)
+                                .disableAutocorrection(true)
                             
                             HStack(spacing: 15) {
                                 VStack {
@@ -95,12 +97,14 @@ struct SignUpView: View {
                                             .foregroundColor(Color("Navy Blue"))
                                             .preferredColorScheme(.light)
                                             .autocapitalization(.none)
+                                            .disableAutocorrection(true)
                                     } else  {
                                         SecureField("password", text: self.$password)
                                             .font(Font.custom("Aeonik-Regular", size: 20))
                                             .foregroundColor(Color("Navy Blue"))
                                             .preferredColorScheme(.light)
                                             .autocapitalization(.none)
+                                            .disableAutocorrection(true)
                                     }
                                 }
                                 

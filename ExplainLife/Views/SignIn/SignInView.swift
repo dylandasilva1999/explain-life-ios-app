@@ -73,6 +73,7 @@ struct SignInView: View {
                                 .background(RoundedRectangle(cornerRadius: 12).stroke(self.email != "" ? Color("Pastel Green") : self.color, lineWidth: 3))
                                 .padding(.top, 30)
                                 .preferredColorScheme(.light)
+                                .disableAutocorrection(true)
                             
                             HStack(spacing: 15) {
                                 VStack {
@@ -83,12 +84,14 @@ struct SignInView: View {
                                             .foregroundColor(Color("Navy Blue"))
                                             .preferredColorScheme(.light)
                                             .autocapitalization(.none)
+                                            .disableAutocorrection(true)
                                     } else  {
                                         SecureField("password", text: self.$password)
                                             .font(Font.custom("Aeonik-Regular", size: 20))
                                             .foregroundColor(Color("Navy Blue"))
                                             .preferredColorScheme(.light)
                                             .autocapitalization(.none)
+                                            .disableAutocorrection(true)
                                     }
                                 }
                                 
