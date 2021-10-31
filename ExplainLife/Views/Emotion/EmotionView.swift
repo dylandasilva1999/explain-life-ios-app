@@ -46,8 +46,9 @@ struct EmotionView: View {
                         let utterance = AVSpeechUtterance(string: "I am feeling joyful")
                         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
                         
-                        utterance.rate = 0.5
-                        
+                        utterance.rate = 0.4
+                        utterance.preUtteranceDelay = 0
+
                         let synthesizer = AVSpeechSynthesizer()
                         synthesizer.speak(utterance)
                     }) {
@@ -72,7 +73,8 @@ struct EmotionView: View {
                         let utterance = AVSpeechUtterance(string: "I am feeling trustworthy")
                         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
                         
-                        utterance.rate = 0.5
+                        utterance.rate = 0.4
+                        utterance.preUtteranceDelay = 0
                         
                         let synthesizer = AVSpeechSynthesizer()
                         synthesizer.speak(utterance)
@@ -100,7 +102,8 @@ struct EmotionView: View {
                         let utterance = AVSpeechUtterance(string: "I am a bit scared")
                         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
                         
-                        utterance.rate = 0.5
+                        utterance.rate = 0.4
+                        utterance.preUtteranceDelay = 0
                         
                         let synthesizer = AVSpeechSynthesizer()
                         synthesizer.speak(utterance)
@@ -126,7 +129,8 @@ struct EmotionView: View {
                         let utterance = AVSpeechUtterance(string: "I am feeling super surprised")
                         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
                         
-                        utterance.rate = 0.5
+                        utterance.rate = 0.4
+                        utterance.preUtteranceDelay = 0
                         
                         let synthesizer = AVSpeechSynthesizer()
                         synthesizer.speak(utterance)
@@ -154,7 +158,8 @@ struct EmotionView: View {
                         let utterance = AVSpeechUtterance(string: "I am feeling down and sad")
                         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
                         
-                        utterance.rate = 0.5
+                        utterance.rate = 0.4
+                        utterance.preUtteranceDelay = 0
                         
                         let synthesizer = AVSpeechSynthesizer()
                         synthesizer.speak(utterance)
@@ -180,7 +185,8 @@ struct EmotionView: View {
                         let utterance = AVSpeechUtterance(string: "I am feeling disgusted")
                         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
                         
-                        utterance.rate = 0.5
+                        utterance.rate = 0.4
+                        utterance.preUtteranceDelay = 0
                         
                         let synthesizer = AVSpeechSynthesizer()
                         synthesizer.speak(utterance)
@@ -208,7 +214,8 @@ struct EmotionView: View {
                         let utterance = AVSpeechUtterance(string: "I am angry")
                         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
                         
-                        utterance.rate = 0.5
+                        utterance.rate = 0.4
+                        utterance.preUtteranceDelay = 0
                         
                         let synthesizer = AVSpeechSynthesizer()
                         synthesizer.speak(utterance)

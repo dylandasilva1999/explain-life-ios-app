@@ -66,7 +66,9 @@ struct SpeakView: View {
                 let utterance = AVSpeechUtterance(string: self.text)
                 utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
                 
-                utterance.rate = 0.5
+                utterance.rate = 0.4
+                utterance.preUtteranceDelay = 0
+                utterance.volume = 1
                 
                 let synthesizer = AVSpeechSynthesizer()
                 synthesizer.speak(utterance)

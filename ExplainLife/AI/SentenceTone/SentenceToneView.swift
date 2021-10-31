@@ -55,13 +55,29 @@ struct SentenceToneView : View {
                     .foregroundColor(Color("Navy Blue"))
                     .frame(width: 40, height: 40, alignment: .center)
                     .padding(.trailing, 10)
-            } else {
+            } else if name == "Tentative"{
                 Image("tentative")
                     .resizable()
                     .scaledToFit()
                     .foregroundColor(Color("Navy Blue"))
                     .frame(width: 40, height: 40, alignment: .center)
                     .padding(.trailing, 10)
+            } else {
+                HStack {
+                    Image("neutral")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(Color("Navy Blue"))
+                        .frame(width: 40, height: 40, alignment: .center)
+                        .padding(.trailing, 10)
+                    
+                    Text("Neutral")
+                        .font(Font.custom("Aeonik-Bold", size: 40))
+                        .foregroundColor(Color("Navy Blue"))
+                }
+                .frame(width: UIScreen.main.bounds.width - 80, height: 180)
+                .background(Color("Muted Navy Blue"))
+                .clipShape(RoundedRectangle(cornerRadius: 30))
             }
             
             Text(name)

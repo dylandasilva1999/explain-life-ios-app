@@ -60,7 +60,7 @@ struct AnalysisView: View {
                     
                     //Prints results to screen
                     Text("\(analyzeText.analysisText)")
-                        .font(Font.custom("Aeonik-Regular", size: 22))
+                        .font(Font.custom("Aeonik-Regular", size: 20))
                         .foregroundColor(Color("Navy Blue"))
                         .frame(width: UIScreen.main.bounds.width - 80)
                         .multilineTextAlignment(.leading)
