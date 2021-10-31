@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct SettingsView: View {
     
     @Environment(\.openURL) var openURL
+    @AppStorage("currentScreen") var currentScreen = 0
+    @State private var showingAlert = false
     
     var body: some View {
         VStack(spacing: 40) {
@@ -124,9 +127,9 @@ struct SettingsView: View {
             
             //Say out loud button
             Button(action: {
-                
+                showingAlert = true
             }) {
-                Text("sign out of account")
+                Text("reset settings")
                     .font(Font.custom("Aeonik-Regular", size: 25))
                     .foregroundColor(Color("Navy Blue"))
                     .padding(.vertical, 25)
@@ -134,6 +137,15 @@ struct SettingsView: View {
             .frame(width: UIScreen.main.bounds.width - 80)
             .background(Color("Pastel Pink"))
             .cornerRadius(20)
+            .alert(isPresented:$showingAlert) {
+                Alert(title: Text("Reset Settings"), message: Text("Are you sure you want to reset your settings and close the app"), primaryButton: .destructive(Text("Exit")) {
+                    currentScreen = 0
+                    try! Auth.auth().signOut()
+                    UserDefaults.standard.set(false, forKey: "status")
+                    NotificationCenter.default.post(name: NSNotification.Name("status"), object: nil)
+                    exit(0)
+                }, secondaryButton: .cancel())
+            }
         }
         .frame(height: UIScreen.main.bounds.height - 200)
     }
