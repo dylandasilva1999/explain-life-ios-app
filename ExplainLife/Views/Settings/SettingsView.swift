@@ -43,89 +43,134 @@ struct SettingsView: View {
             }
             .frame(width: UIScreen.main.bounds.width - 80)
             
-            HStack {
-                Button(action: {
-                    openURL(URL(string: "https://aut2know.co.za/how-to-donate/")!)
-                }) {
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Image(systemName: "globe.asia.australia.fill")
-                                .renderingMode(.template)
-                                .font(.title)
-                                .foregroundColor(Color("Navy Blue"))
-                            
-                            Spacer()
-                        }
-                        .padding(.leading, 22)
-                        .padding(.trailing, 22)
-                        .padding(.top, 22)
-                        .padding(.bottom, 2)
-                        
-                        HStack {
-                            Text("Donate")
-                                .font(Font.custom("Aeonik-Bold", size: 20))
-                                .foregroundColor(Color("Navy Blue"))
-                            
-                            Spacer()
-                        }
-                        .padding(.leading, 22)
-                        .padding(.trailing, 22)
-                        
-                        Text("Autism SA")
-                            .font(Font.custom("Aeonik-Regular", size: 16))
-                            .foregroundColor(Color("Navy Blue"))
-                            .padding(.leading, 22)
-                            .padding(.trailing, 22)
-                            .padding(.bottom, 22)
-                    }
+            VStack {
+                HStack {
+                    //Support text
+                    Text("Support")
+                        .font(Font.custom("Aeonik-Bold", size: 26))
+                        .foregroundColor(Color("Navy Blue"))
+                    
+                    Spacer()
                 }
-                .background(Color("Muted Pastel Pink"))
-                .cornerRadius(20)
+                .frame(width: UIScreen.main.bounds.width - 80)
                 
-                Button(action: {
-                    openURL(URL(string: "https://aut2know.co.za/contact-us-2/")!)
-                }) {
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Image(systemName: "phone.fill")
-                                .renderingMode(.template)
-                                .font(.title)
-                                .foregroundColor(Color("Navy Blue"))
-                            
-                            Spacer()
-                        }
-                        .padding(.leading, 22)
-                        .padding(.trailing, 22)
-                        .padding(.top, 22)
-                        .padding(.bottom, 2)
-                        
-                        HStack {
-                            Text("Need help?")
-                                .font(Font.custom("Aeonik-Bold", size: 20))
-                                .foregroundColor(Color("Navy Blue"))
-                            
-                            Spacer()
-                        }
-                        .padding(.leading, 22)
-                        .padding(.trailing, 22)
-                        
-                        Text("Contact Support")
-                            .font(Font.custom("Aeonik-Regular", size: 16))
-                            .foregroundColor(Color("Navy Blue"))
+                HStack {
+                    Button(action: {
+                        openURL(URL(string: "https://aut2know.co.za/how-to-donate/")!)
+                    }) {
+                        VStack(alignment: .leading) {
+                            HStack {
+                                Image(systemName: "globe.asia.australia.fill")
+                                    .renderingMode(.template)
+                                    .font(.title)
+                                    .foregroundColor(Color("Navy Blue"))
+                                
+                                Spacer()
+                            }
                             .padding(.leading, 22)
                             .padding(.trailing, 22)
-                            .padding(.bottom, 22)
+                            .padding(.top, 22)
+                            .padding(.bottom, 2)
+                            
+                            HStack {
+                                Text("Donate")
+                                    .font(Font.custom("Aeonik-Bold", size: 20))
+                                    .foregroundColor(Color("Navy Blue"))
+                                
+                                Spacer()
+                            }
+                            .padding(.leading, 22)
+                            .padding(.trailing, 22)
+                            
+                            Text("Autism SA")
+                                .font(Font.custom("Aeonik-Regular", size: 16))
+                                .foregroundColor(Color("Navy Blue"))
+                                .padding(.leading, 22)
+                                .padding(.trailing, 22)
+                                .padding(.bottom, 22)
+                        }
+                    }
+                    .background(Color("Muted Pastel Pink"))
+                    .cornerRadius(20)
+                    
+                    Button(action: {
+                        openURL(URL(string: "https://aut2know.co.za/contact-us-2/")!)
+                    }) {
+                        VStack(alignment: .leading) {
+                            HStack {
+                                Image(systemName: "phone.fill")
+                                    .renderingMode(.template)
+                                    .font(.title)
+                                    .foregroundColor(Color("Navy Blue"))
+                                
+                                Spacer()
+                            }
+                            .padding(.leading, 22)
+                            .padding(.trailing, 22)
+                            .padding(.top, 22)
+                            .padding(.bottom, 2)
+                            
+                            HStack {
+                                Text("Need help?")
+                                    .font(Font.custom("Aeonik-Bold", size: 20))
+                                    .foregroundColor(Color("Navy Blue"))
+                                
+                                Spacer()
+                            }
+                            .padding(.leading, 22)
+                            .padding(.trailing, 22)
+                            
+                            Text("Contact Support")
+                                .font(Font.custom("Aeonik-Regular", size: 16))
+                                .foregroundColor(Color("Navy Blue"))
+                                .padding(.leading, 22)
+                                .padding(.trailing, 22)
+                                .padding(.bottom, 22)
+                        }
+                    }
+                    .background(Color("Muted Pastel Pink"))
+                    .cornerRadius(20)
+                }
+                .fixedSize(horizontal: false, vertical: true)
+                .frame(maxWidth: UIScreen.main.bounds.width - 80)
+                
+                VStack(alignment: .leading) {
+                    HStack {
+                        Button(action: {
+                            openURL(URL(string: "https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt")!)
+                        }) {
+                            HStack {
+                                Image(systemName: "doc.fill")
+                                    .renderingMode(.template)
+                                    .font(.title3)
+                                    .foregroundColor(Color("Navy Blue"))
+                                
+                                VStack(alignment: .leading) {
+                                    Text("Terms & Conditions")
+                                        .font(Font.custom("Aeonik-Regular", size: 20))
+                                        .foregroundColor(Color("Navy Blue"))
+                                }
+                                .padding(.leading, 10)
+                                .padding(.trailing, 22)
+                                
+                                Image(systemName: "chevron.right")
+                                    .renderingMode(.template)
+                                    .font(.body)
+                                    .foregroundColor(Color("Navy Blue"))
+                            }
+                            .padding(22)
+                            .frame(maxWidth: UIScreen.main.bounds.width - 80)
+                        }
+                        .background(Color("Muted Pastel Pink"))
+                        .cornerRadius(20)
                     }
                 }
-                .background(Color("Muted Pastel Pink"))
-                .cornerRadius(20)
+                .padding(.top, 20)
             }
-            .fixedSize(horizontal: false, vertical: true)
-            .frame(maxWidth: UIScreen.main.bounds.width - 80)
             
             Spacer()
             
-            //Say out loud button
+            //Reset Settings button
             Button(action: {
                 showingAlert = true
             }) {
