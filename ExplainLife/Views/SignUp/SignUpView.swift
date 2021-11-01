@@ -175,6 +175,7 @@ struct SignUpView: View {
                 self.isLoading = false
                 self.clear()
             }, onError: { (errorMessage) in
+                self.isLoading = false
                 self.error = errorMessage
                 self.alert.toggle()
                 return
