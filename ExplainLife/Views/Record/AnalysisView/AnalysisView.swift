@@ -23,22 +23,23 @@ struct AnalysisView: View {
     var body: some View {
         VStack(spacing: 40) {
             VStack(spacing: 20) {
-                //Page title
+                //Analysis Page title
                 HStack {
+                    //Analysis Page Image
                     Image(systemName: "info.circle.fill")
                         .renderingMode(.template)
                         .font(.title)
                         .foregroundColor(Color("Navy Blue"))
                         .padding(.top, 5)
                         .padding(.trailing, 5)
-                    //Speak page text
+                    //Analysis Page Text
                     Text("Insights")
                         .font(Font.custom("Aeonik-Bold", size: 32))
                         .foregroundColor(Color("Navy Blue"))
                     
                     Spacer()
                 }
-                //Custom Groupbox
+                //Custom Groupbox for analysis screen description
                 GroupBox(
                     content: { Text("view what emotion and tone is meant by the content of each individual sentence you record.")
                             .font(Font.custom("Aeonik-Regular", size: 18))
@@ -51,7 +52,7 @@ struct AnalysisView: View {
             
             VStack(spacing: 10) {
                 VStack(spacing: 30) {
-                    //Tip Text
+                    //Inputted Sentence Text
                     Text("Here is the sentence you recorded:")
                         .font(Font.custom("Aeonik-Bold", size: 20))
                         .foregroundColor(Color("Navy Blue"))
@@ -70,6 +71,7 @@ struct AnalysisView: View {
                 .frame(width: UIScreen.main.bounds.width - 80, height: UIScreen.main.bounds.height - 720)
                 .padding(.top, 30)
                 
+                //Looping through each item and displaying the IBM Tone Analyzer Value
                 ForEach(analyzeText.toneData) { i in
                     SentenceToneView(name: i.toneName)
                 }

@@ -7,6 +7,7 @@
 
 import Foundation
 
+//ToneDataModel used to work with JSON data
 struct toneDataModel: Identifiable {
     var id : String
     var toneName: String

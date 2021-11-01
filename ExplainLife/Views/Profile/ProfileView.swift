@@ -10,10 +10,16 @@ import FirebaseAuth
 
 struct ProfileView: View {
     
+    //StateObject var to have an instance of ProfileService and
+    //access to the swift file
     @StateObject var profileService = ProfileService()
     @State var color = Color("Navy Blue")
+    
+    //Variable initialisations in which the user details are saved
     @State var fullname : String = ""
     @State var email : String = ""
+    
+    //Varables for the custom validation
     @State var alert = false
     @State var error = ""
     
@@ -21,15 +27,16 @@ struct ProfileView: View {
         
         VStack(spacing: 40) {
             VStack(spacing: 20) {
-                //Page title
+                //Profile Page title
                 HStack {
+                    //Profile Page Image
                     Image("profile")
                         .renderingMode(.template)
                         .font(.title)
                         .foregroundColor(Color("Pastel Blue"))
                         .padding(.top, 5)
                         .padding(.trailing, 5)
-                    //Speak page text
+                    //Profile Page Text
                     Text("Profile")
                         .font(Font.custom("Aeonik-Bold", size: 32))
                         .foregroundColor(Color("Navy Blue"))
@@ -37,7 +44,7 @@ struct ProfileView: View {
                     Spacer()
                 }
                 
-                //Custom Groupbox
+                //Custom Groupbox for profile screen description
                 GroupBox(
                     content: { Text("edit your new full name or email address by entering the new info in the fields below.")
                             .font(Font.custom("Aeonik-Regular", size: 18))
@@ -99,7 +106,7 @@ struct ProfileView: View {
             }
             .frame(width: UIScreen.main.bounds.width - 80)
             
-            //Say out loud button
+            //Sign Out button
             Button(action: {
                 try! Auth.auth().signOut()
                 UserDefaults.standard.set(false, forKey: "status")
@@ -123,6 +130,7 @@ struct ProfileView: View {
         self.fullname = ""
     }
     
+    //Function to update the user details
     func updateInfo() {
         let db = FirestoreService.db.collection("users")
         let uid = Auth.auth().currentUser!.uid

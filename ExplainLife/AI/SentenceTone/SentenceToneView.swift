@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct SentenceToneView : View {
+    
+    //Variable name which will hold the name of Tone Analyzer emotion/tone
     var name = ""
+    //State var color
     @State var color = Color("White")
     
     var body: some View {
         HStack {
+            //Nested if statements to check the tone value from the IBM API call
+            //and set specific colours and emojis according to the name
             if name == "Sadness" {
                 Image("sadness")
                     .resizable()

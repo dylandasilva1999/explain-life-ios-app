@@ -17,11 +17,14 @@ struct SpeechButton: View {
     
     var body: some View {
         
-        Button(action:{// Button
-            if(self.swiftUISpeech.getSpeechStatus() == "Denied - Close the App"){// checks status of auth if no auth pop up error
+        //Button
+        Button(action:{
+            //Checks status of auth if no auth popup error
+            if(self.swiftUISpeech.getSpeechStatus() == "Denied - Close the App"){
                 self.actionPop.toggle()
             }else{
-                withAnimation(.spring(response: 0.3, dampingFraction: 0.3, blendDuration: 0.2)){self.swiftUISpeech.isRecording.toggle()}// button animation
+                //Button animation
+                withAnimation(.spring(response: 0.3, dampingFraction: 0.3, blendDuration: 0.2)){self.swiftUISpeech.isRecording.toggle()}
                 self.swiftUISpeech.isRecording ? self.swiftUISpeech.startRecording() : self.swiftUISpeech.stopRecording()
             }
         }){

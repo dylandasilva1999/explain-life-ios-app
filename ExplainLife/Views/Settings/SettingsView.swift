@@ -10,29 +10,36 @@ import FirebaseAuth
 
 struct SettingsView: View {
     
+    //Environment var to be able to open URL's
     @Environment(\.openURL) var openURL
+    
+    //AppStorage var to hold the value of the current screen for when reset
+    //settings button is clicked
     @AppStorage("currentScreen") var currentScreen = 0
+    
+    //Showing the alert Bool variable
     @State private var showingAlert = false
     
     var body: some View {
         VStack(spacing: 40) {
             VStack(spacing: 20) {
-                //Page title
+                //Settings Page title
                 HStack {
+                    //Settings Page Image
                     Image("settings")
                         .renderingMode(.template)
                         .font(.title)
                         .foregroundColor(Color("Pastel Pink"))
                         .padding(.top, 5)
                         .padding(.trailing, 5)
-                    //Speak page text
+                    //Settings Page Text
                     Text("Settings")
                         .font(Font.custom("Aeonik-Bold", size: 32))
                         .foregroundColor(Color("Navy Blue"))
                     
                     Spacer()
                 }
-                //Custom Groupbox
+                //Custom Groupbox for settings screen description
                 GroupBox(
                     content: { Text("edit and personalise the app to your needs by clicking on the appropriate item below.")
                             .font(Font.custom("Aeonik-Regular", size: 18))
@@ -54,6 +61,7 @@ struct SettingsView: View {
                 }
                 .frame(width: UIScreen.main.bounds.width - 80)
                 
+                //HStack which hold the hot links to Autism South Africa
                 HStack {
                     Button(action: {
                         openURL(URL(string: "https://aut2know.co.za/how-to-donate/")!)

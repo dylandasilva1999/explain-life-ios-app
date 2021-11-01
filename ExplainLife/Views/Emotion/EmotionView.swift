@@ -12,22 +12,23 @@ struct EmotionView: View {
     var body: some View {
         VStack(spacing: 30) {
             VStack(spacing: 20) {
-                //Page title
+                //Emotion Page title
                 HStack {
+                    //Emotion Page Image
                     Image("emotion")
                         .renderingMode(.template)
                         .font(.title)
                         .foregroundColor(Color("Pastel Orange"))
                         .padding(.top, 5)
                         .padding(.trailing, 5)
-                    //Speak page text
+                    //Emotion Page Text
                     Text("Emotion")
                         .font(Font.custom("Aeonik-Bold", size: 32))
                         .foregroundColor(Color("Navy Blue"))
                     
                     Spacer()
                 }
-                //Custom Groupbox
+                //Custom Groupbox for emotion screen description
                 GroupBox(
                     content: { Text("click on any of the emotion cards below to say out loud how you are feeling.")
                             .font(Font.custom("Aeonik-Regular", size: 18))
