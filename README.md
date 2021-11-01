@@ -247,7 +247,7 @@ The `Reviews & Testing` was done through a video demonstration, and a [google fo
 
 To see a run through of the application, click below:
 
-[View Demonstration]()
+[View Demonstration](https://youtu.be/eIQ_HKjL-sU)
 
 <!-- PROMO VIDEO -->
 ### Promotional Video
