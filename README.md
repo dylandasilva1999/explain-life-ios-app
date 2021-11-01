@@ -71,7 +71,7 @@
 <!--PROJECT DESCRIPTION-->
 ## About the Project
 
-<!--![image1][image1]-->
+![image1][image1]
 
 ### Project Description
 
@@ -137,31 +137,31 @@ The  `IBM Watson® Tone Analyzer` uses linguistic analysis to detect emotional a
 ### Features
 
 ### Speak
-<!--![image2][image2]-->
+![image2][image2]
 Using the `text-to-speech` AI the user has the ability to type in the textbox what they want Explain Life to say out loud, expression their emotions in difficult social interaction. The `speak` features is to assist the user with communication, and minimise anxiety and stress in social interaction.
 
 ### Record & IBM Tone Analysis
-<!--![image3][image3]-->
+![image3][image3]
 Using the `speech-to-text` AI the user can record a sentence while in a social conversation/interaction. Thereafter making an API call to the `IBM Tone Analyzer` services to analyse the text that was inputted through speech, and provide what emotion/tone was conveyed in the user's sentence. The `record & IBM tone analysis` feature is used in Explain Life to assist autism spectrum disorder users to better understand emotions that other people are conveying in their sentences.
 
 ### Emotion Expression
-<!--![image4][image4]-->
+![image4][image4]
 Using the `text-to-speech` AI the user can click on any of the emotion cards, which Explain Life then reads out loud how the user is feeling.
 
 ### Secure Firebase Authentication
-<!--![image5][image5]-->
+![image5][image5]
 Secure log in and register with email, password, and fullname with forget password functionality.
 
 ### Full Onboarding
-<!--![image6][image6]-->
+![image6][image6]
 A full onboarding upon first time launch, which explains the core features of Explain Life.
 
 ### Edit Profile Details
-<!--![image7][image7]-->
+![image7][image7]
 Edit your username, and authentication email, with which you use to sign in to Explain Life.
 
 ### Settings
-<!--![image8][image8]-->
+![image8][image8]
 In the settings, there are links to donate to `Autism South Africa`, as well as a link to how to come in contact with `Autism South Africa`. The user also has the ability to `reset settings` which resets that the onboarding shows again and it signs the user out.
 
 ### Functionality
@@ -182,16 +182,13 @@ The `Conceptual Process` is the set of actions, activities and research that was
 
 ### Ideation
 
-<!--![image9][image9]-->
-<!--![image10][image10]-->
+![image9][image9]
+![image10][image10]
 
 ### Wireframes
 
-<!--![image11][image11]-->
-
-### User-flow
-
-<!--![image12][image12]-->
+![image11][image11]
+![image12][image12]
 
 <!-- DEVELOPMENT PROCESS -->
 ## Development Process
@@ -242,8 +239,8 @@ The `Reviews & Testing` was done through a video demonstration, and a [google fo
 
 ### Mockups
 
-<!--![image13][image13]-->
-<!--![image14][image14]-->
+![image13][image13]
+![image14][image14]
 
 <!-- VIDEO DEMONSTRATION -->
 ## Video Demonstration
@@ -311,7 +308,7 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 [behance-url]: https://www.behance.net/dylandasilva_
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[image1]: Images/Image1-new.png
+[image1]: Images/Image1.png
 [image2]: Images/Image2.png
 [image3]: Images/Image3.png
 [image4]: Images/Image4.png
@@ -323,5 +320,5 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 [image10]: Images/Image10.png
 [image11]: Images/Image11.png
 [image12]: Images/Image12.png
-[image13]: Images/Image13.png
-[image14]: Images/Image14.png
+[image13]: Images/Image13.jpg
+[image14]: Images/Image14.jpg
