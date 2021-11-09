@@ -35,7 +35,7 @@
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-* * [Project Description](#project-description)
+  * [Project Description](#project-description)
   * [Built with](#built-with)
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
@@ -50,7 +50,6 @@
 * [Concept Process](#concept-process)
    * [Ideation](#ideation)
    * [Wireframes](#wireframes)
-   * [User-flow](#user-flow)
 * [Development Process](#development-process)
    * [Implementation Process](#implementation-process)
         * [Highlights](#highlights)
@@ -250,11 +249,11 @@ To see a run through of the application, click below:
 [View Demonstration](https://youtu.be/eIQ_HKjL-sU)
 
 <!-- PROMO VIDEO -->
-### Promotional Video
+## Promotional Video
 
 To see the promotiomal video, click below:
 
-[View Promotional Video]()
+[View Promotional Video](https://youtu.be/0tQjp039dK4)
 
 <!-- ROADMAP -->
 ## Roadmap
