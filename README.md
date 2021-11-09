@@ -24,7 +24,7 @@
       <a href="https://github.com/dylandasilva1999/explain-life-ios-app"><strong>Explore the docs »</strong></a>
    <br />
    <br />
-   <a href="">View Demo</a>
+   <a href="https://youtu.be/eIQ_HKjL-sU">View Demo</a>
     ·
     <a href="https://github.com/dylandasilva1999/explain-life-ios-app/issues">Report Bug</a>
     ·
